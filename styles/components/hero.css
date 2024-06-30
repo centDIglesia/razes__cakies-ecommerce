@@ -28,9 +28,11 @@ body {
   line-height: var(--size-sm);
 }
 
+
 .hero__image {
   width: 40%;
   display: inline;
+  margin-top: 3em;
 }
 
 .hero__left {
@@ -64,13 +66,11 @@ body {
 @media (min-width: 640px) {
   body {
     padding-inline: none;
-  
   }
 
   .hero {
     height: 33em;
     flex-direction: row;
- 
   }
 
   .hero__left {
@@ -81,10 +81,9 @@ body {
 
   .hero__title {
     text-align: start;
-    font-size: calc(var(--size-3xl) + .3em);
+    font-size: calc(var(--size-3xl) + 0.3em);
     line-height: var(--size-5xl);
     font-weight: 800;
-
   }
 
   .hero__sub-title {
@@ -95,73 +94,64 @@ body {
   }
 
   .hero__image {
-    padding-top: var(--size-5xl);
+    padding-top: 0;
     width: 95%;
     display: inline;
   }
-
-  
 }
 
 /* md */
 @media (min-width: 768px) {
-    .hero__left {     
-        gap: var(--size-2xl);
-        margin-left: 2em;
-      }
-    
-      .hero__title {
-     
-        font-size: calc(var(--size-3xl) + 1.1em);
-        line-height: var(--size-5xl);
-        max-width: 95%;
-    
-      }
-    
-      .hero__sub-title {
-       
-        line-height: 1.5em;
-        max-width: 95%;
-        font-size: var(--size-sm);
-      }
+  .hero__left {
+    gap: var(--size-2xl);
+    margin-left: 2em;
+  }
 
-  
+  .hero__title {
+    font-size: calc(var(--size-3xl) + 1.1em);
+    line-height: var(--size-5xl);
+    max-width: 95%;
+  }
+
+  .hero__sub-title {
+    line-height: 1.5em;
+    max-width: 95%;
+    font-size: var(--size-sm);
+  }
+
+  .hero__button {
+    font-size: var(--size-base);
+  }
 }
 
 /* lg */
 @media (min-width: 1024px) {
- 
-  
 }
 
 @media (min-width: 1280px) {
-    .hero {
-        height: 40em;
-      }
-    
-      .hero__left {     
-        gap: var(--size-4xl);
-        margin-left: 0;
-      }
-    
-      .hero__title {
-         
-        font-size: calc(var(--size-3xl) + 3em);
-        line-height: var(--size-8xl);
-        max-width: 95%;
-    
-      }
-      .hero__sub-title {
-           
-        line-height: 1.5em;
-        max-width: 80%;
-        font-size: var(--size-lg);
-      }
-    
-      .hero__image {
-        width:100%;
-       
-      }
+  .hero {
+    height: 40em;
+  }
+
+  .hero__left {
+    gap: var(--size-4xl);
+    margin-left: 2em;
+  }
+
+  .hero__title {
+    font-size: calc(var(--size-3xl) + 3em);
+    line-height: var(--size-7xl);
+    max-width: 95%;
+  }
+  .hero__sub-title {
+    line-height: 1.5em;
+    max-width: 80%;
+    font-size: var(--size-lg);
+  }
+
+  .hero__image {
+    width: 100%;
+  }
 }
 
 /* 2xl */
