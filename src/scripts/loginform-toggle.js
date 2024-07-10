@@ -18,3 +18,21 @@ export function toggleForms() {
     });
   }
   
+  export function togglePasswordVisibility() {
+    const toggleIcons = document.querySelectorAll('.eye__icon');
+  
+    toggleIcons.forEach(icon => {
+      icon.addEventListener('click', () => {
+        const input = icon.previousElementSibling;
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.classList.remove('ri-eye-off-line');
+          icon.classList.add('ri-eye-line');
+        } else {
+          input.type = 'password';
+          icon.classList.remove('ri-eye-line');
+          icon.classList.add('ri-eye-off-line');
+        }
+      });
+    });
+  }

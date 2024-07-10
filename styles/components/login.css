@@ -1,28 +1,36 @@
+body {
+  padding-inline: 1em;
+}
+
 .LogIn__page {
   background-color: #fbf6f3;
   border-radius: 0.5rem;
   height: 40em;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
-  gap: 1em;
-  padding-bottom: 3em;
+  padding: 2em 2em !important;
 }
 .login__image {
-  width: 5em;
+  width: 7em;
 }
+
 .form {
   min-width: 20em;
-  border: 1px solid var(--clr-lightmaincolor);
+  /* border: 1px solid var(--clr-lightmaincolor); */
   padding: 3em;
-  border-radius: .5em;
+  border-radius: 0.5em;
+}
+
+form{
+    margin-top: 3em;
 }
 
 .login__title {
   color: var(--clr-maincolor);
   text-align: center;
-  font-size: var(--size-2xl);
+  font-size: var(--size-3xl);
 }
 .login__sub-title {
   color: var(--clr-lightmaincolor);
@@ -30,30 +38,21 @@
   font-size: var(--size-xs);
 }
 
-.input__label {
-  font-weight: 700;
-  font-size: var(--size-xs);
-  margin-top: 1em;
-  margin-left: 0.5em;
-  color: var(--clr-maincolor);
-}
-
 form .field {
-    height: var(--size-4xl);
+  height: var(--size-4xl);
   width: 100%;
+  margin-top: 1em;
+  position: relative;
 }
-
 
 .field input {
-    background-color: rgba(255, 255, 255, 0.822);
-
-  /* border: 1px solid var(--clr-lightmaincolor); */
+  background-color: rgba(255, 255, 255, 0.822);
   border: none;
-  border-radius: 4px;
+
   color: var(--clr-maincolor);
   font-weight: 500;
   padding-left: 1em;
-  font-size: var(--size-xs);
+  font-size: 0.7em;
 }
 
 .field input:focus {
@@ -71,37 +70,48 @@ form .field {
 .field button {
   height: 100%;
   width: 100%;
+  border-radius: 4px;
 }
 .form__link {
   color: var(--clr-lightmaincolor);
   font-weight: 600;
-  font-size: var(--size-xs);
+  font-size: 0.7em;
+  margin-top: 2em;
   text-align: center;
 }
 
 .forgot__pass {
   margin-top: 0.5em;
   text-align: end;
-  font-size: var(--size-xs);
 }
 .forgot__pass:hover {
   color: var(--clr-maincolor);
 }
 .create_account {
   text-align: center;
-  font-size: var(--size-xs);
 }
 .create_account:hover {
   color: var(--clr-maincolor);
 }
 
-.button__field {
-  margin: 2em 0;
-}
-
 .login__Right {
   display: flex;
   flex-direction: row;
+}
+.button__field {
+  margin: 1em 0;
+}
+.login__btn {
+  font-size: var(--size-xs);
+  margin-top: 1em;
+}
+
+.eye__icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: var(--clr-maincolor);
 }
 
 #signup-form {
@@ -118,39 +128,97 @@ form .field {
 
 /* sm */
 @media (min-width: 640px) {
-}
-
-/* md */
-@media (min-width: 768px) {
   .LogIn__page {
-    height: 35em;
-    gap: 5em;
     flex-direction: row;
-    padding-bottom: 1em;
+    gap: 2em;
+    padding-bottom: 3em;
   }
 
   .login__image {
     width: 15em;
   }
-  .form {
-    min-width: 15em;
-  }
+}
 
-  .login__title {
-  
-    font-size: var(--size-2xl);
-  }
-  .login__sub-title {   
-    margin-top: 0.5em;
-    font-size: var(--size-xs);
+/* md */
+@media (min-width: 768px) {
+  .login__image {
+    width: 20em;
   }
 }
 
 /* lg */
-/* @media (min-width: 1024px) {} */
+@media (min-width: 1024px) {
+  .login__title {
+    font-size: var(--size-5xl);
+  }
+  .login__sub-title {
+    margin-top: 1em;
+    font-size: var(--size-sm);
+    margin-bottom: 3em;
+  }
+  .LogIn__page {
+    flex-direction: row;
+    gap: 5em;
+    padding-bottom: 1em;
+  }
+  .login__image {
+    width: 21em;
+  }
+
+  form .field {
+    height: var(--size-5xl);
+    margin-top: 1.5em;
+    position: relative;
+  }
+
+  .field input {
+    background-color: rgba(255, 255, 255, 0.822);
+    border: none;
+
+    color: var(--clr-maincolor);
+    font-weight: 500;
+    padding-left: 1em;
+    font-size: 0.7em;
+  }
+
+  .form {
+    min-width: 25em;
+    margin-right: 3em;
+  }
+}
 
 /* xl */
-/* @media (min-width: 1280px) {} */
+@media (min-width: 1280px) {
+  .login__title {
+    font-size: var(--size-5xl);
+  }
+  .login__sub-title {
+    margin-top: 1em;
+    font-size: var(--size-base);
+    margin-bottom: 3em;
+  }
+  .LogIn__page {
+    flex-direction: row;
+    gap: 15em;
+    padding-bottom: 0;
+  }
+  .login__image {
+    width: 25em;
+    margin-left: 6em;
+  }
+
+  .form {
+    min-width: 30em;
+    margin-right: 5em;
+    padding: 3em 3em;
+  }
+
+  form{
+    margin-top: 3em;
+  }
+}
 
 /* 2xl */
-/* @media (min-width: 1536px) {} */
+@media (min-width: 1536px) {
+   
+}

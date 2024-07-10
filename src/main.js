@@ -4,9 +4,15 @@ import '../styles/components/header.css'
 import '../styles/components/hero.css'
 import '../styles/components/login.css'
 import '../styles/utils.css';
-import { toggleForms } from '/src/scripts/loginform-toggle';
+import { toggleForms,togglePasswordVisibility } from '/src/scripts/loginform-toggle';
 
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
   toggleForms();
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    toggleForms();
+    togglePasswordVisibility();
+  });
