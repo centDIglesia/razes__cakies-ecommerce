@@ -68,11 +68,92 @@
 
     <main>
       <section class="LogIn__page container">
-        <div class="login container">
-          <div class="login__left">
-            <img src="/images/logIn__sideImage.png" alt="">
+        <div class="login__left">
+          <img src="/images/logIn__sideImage.png" alt="" class="login__image" />
+        </div>
+        <div class="login__Right">
+          <div class="form signin" id="signin-form">
+            <div class="form__content">
+              <h1 class="login__title">Welcome Back!</h1>
+              <p class="login__sub-title">Please Enter your details.</p>
+
+              <form action="#">
+                <p class="input__label">Email</p>
+                <div class="field input__field">
+                  <input type="email" placeholder="Email" class="Email" />
+                </div>
+
+                <p class="input__label">Password</p>
+                <div class="field input__field">
+                  <input type="Password" placeholder="Password" class="Email" />
+                </div>
+
+                <div class="form__link forgot__pass">
+                  <a href="">Forgot Password?</a>
+                </div>
+
+                <div class="field button__field">
+                  <button type="submit" class="btn login__btn">Sign in</button>
+                </div>
+
+                <div class="form__link">
+                  <span>
+                    Don't have an account?
+                    <a href="#" class="create_account" id="show-signup">Create account here.</a>
+                  </span>
+                </div>
+              </form>
+
+              
+            </div>
+
           </div>
-          <div class="login__Right"></div>
+
+          <div class="form signup" id="signup-form">
+            <div class="form__content">
+
+              <h1 class="login__title">Get Started.</h1>
+              <p class="login__sub-title">Please Enter your details.</p>
+
+              <form action="#">
+
+                <p class="input__label">Username</p>
+                <div class="field input__field">
+                  <input type="text" placeholder="Username" class="Email" />
+                </div>
+
+                <p class="input__label">Email</p>
+                <div class="field input__field">
+                  <input type="email" placeholder="Email" class="Email" />
+                </div>
+
+                <p class="input__label">Password</p>
+                <div class="field input__field">
+                  <input type="Password" placeholder="Password" class="Email" />
+                </div>
+
+                <p class="input__label">Confirm Password</p>
+                <div class="field input__field">
+                  <input type="Password" placeholder="Confirm Password" class="Email" />
+                </div>
+
+                <div class="field button__field">
+                  <button type="submit" class="btn login__btn">Sign in</button>
+                </div>
+
+                <div class="form__link">
+                  <span>
+                   Already have an account?
+                    <a href="#" id="show-signin" class="create_account">Sign In here</a>
+                  </span>
+                </div>
+              </form>
+
+              
+            </div>
+
+          </div>
+
         </div>
       </section>
     </main>

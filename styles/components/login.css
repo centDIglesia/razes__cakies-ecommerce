@@ -1,11 +1,156 @@
-.login{
-    background-color: #fbf6f3;
+.LogIn__page {
+  background-color: #fbf6f3;
   border-radius: 0.5rem;
-  height: 25.8125em;
+  height: 40em;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column-reverse;
-  text-align: center;
-  margin-top: var(--size-4xl);
+  flex-direction: column;
+  gap: 1em;
+  padding-bottom: 3em;
 }
+.login__image {
+  width: 5em;
+}
+.form {
+  min-width: 20em;
+  border: 1px solid var(--clr-lightmaincolor);
+  padding: 3em;
+  border-radius: .5em;
+}
+
+.login__title {
+  color: var(--clr-maincolor);
+  text-align: center;
+  font-size: var(--size-2xl);
+}
+.login__sub-title {
+  color: var(--clr-lightmaincolor);
+  text-align: center;
+  font-size: var(--size-xs);
+}
+
+.input__label {
+  font-weight: 700;
+  font-size: var(--size-xs);
+  margin-top: 1em;
+  margin-left: 0.5em;
+  color: var(--clr-maincolor);
+}
+
+form .field {
+    height: var(--size-4xl);
+  width: 100%;
+}
+
+
+.field input {
+    background-color: rgba(255, 255, 255, 0.822);
+
+  /* border: 1px solid var(--clr-lightmaincolor); */
+  border: none;
+  border-radius: 4px;
+  color: var(--clr-maincolor);
+  font-weight: 500;
+  padding-left: 1em;
+  font-size: var(--size-xs);
+}
+
+.field input:focus {
+  outline: none;
+  box-shadow: 0 2px 0 var(--clr-lightmaincolor);
+}
+
+.field input::placeholder {
+  color: var(--clr-maincolor);
+  font-weight: 500;
+  opacity: 50%;
+}
+
+.field input,
+.field button {
+  height: 100%;
+  width: 100%;
+}
+.form__link {
+  color: var(--clr-lightmaincolor);
+  font-weight: 600;
+  font-size: var(--size-xs);
+  text-align: center;
+}
+
+.forgot__pass {
+  margin-top: 0.5em;
+  text-align: end;
+  font-size: var(--size-xs);
+}
+.forgot__pass:hover {
+  color: var(--clr-maincolor);
+}
+.create_account {
+  text-align: center;
+  font-size: var(--size-xs);
+}
+.create_account:hover {
+  color: var(--clr-maincolor);
+}
+
+.button__field {
+  margin: 2em 0;
+}
+
+.login__Right {
+  display: flex;
+  flex-direction: row;
+}
+
+#signup-form {
+  display: none;
+}
+
+#signin-form {
+  display: block;
+}
+
+/* xs */
+@media (min-width: 475px) {
+}
+
+/* sm */
+@media (min-width: 640px) {
+}
+
+/* md */
+@media (min-width: 768px) {
+  .LogIn__page {
+    height: 35em;
+    gap: 5em;
+    flex-direction: row;
+    padding-bottom: 1em;
+  }
+
+  .login__image {
+    width: 15em;
+  }
+  .form {
+    min-width: 15em;
+  }
+
+  .login__title {
+  
+    font-size: var(--size-2xl);
+  }
+  .login__sub-title {   
+    margin-top: 0.5em;
+    font-size: var(--size-xs);
+  }
+}
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */
