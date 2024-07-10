@@ -1,0 +1,11 @@
+.login{
+    background-color: #fbf6f3;
+  border-radius: 0.5rem;
+  height: 25.8125em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  text-align: center;
+  margin-top: var(--size-4xl);
+}
