@@ -23,8 +23,8 @@ body {
   border-radius: 0.5em;
 }
 
-form{
-    margin-top: 3em;
+form {
+  margin-top: 3em;
 }
 
 .login__title {
@@ -53,6 +53,11 @@ form .field {
   font-weight: 500;
   padding-left: 1em;
   font-size: 0.7em;
+  transition: box-shadow .3s ease;
+}
+
+.field input:hover {
+  box-shadow: 0 0 20px rgba(121, 79, 66, .08);
 }
 
 .field input:focus {
@@ -213,12 +218,11 @@ form .field {
     padding: 3em 3em;
   }
 
-  form{
+  form {
     margin-top: 3em;
   }
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
-   
 }

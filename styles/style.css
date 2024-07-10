@@ -10,6 +10,9 @@
   --clr-accentcolor: #efd6c6;
   --clr-lightaccentcolor: #fbf6f3;
 
+  --clr-maincolorRGBA: rgba(121, 79, 66, 1);
+
+
   /* sizes */
   --size-xxs: 0.5rem;
   --size-xs: 0.75rem;
