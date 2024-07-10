@@ -10,7 +10,7 @@
 }
 
 .main__logo{
-    width: var(--size-5xl);
+    width: var(--size-6xl);
 }
 .header__menu, .login__button,.header__line {
   display: none;

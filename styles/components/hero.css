@@ -5,34 +5,49 @@ body {
 .hero {
   background-color: #fbf6f3;
   border-radius: 0.5rem;
-  height: 20em;
+  height: 25.8125em;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column-reverse;
   text-align: center;
+  margin-top: var(--size-4xl);
+}
+
+.hero__image {
+  width: 70%;
+  display: inline;
+  margin-bottom: var(--size-lg);
+}
+
+.hero__maintext {
+  position: relative;
 }
 
 .hero__title {
   color: var(--clr-maincolor);
-  font-size: var(--size-3xl);
+  font-size: var(--size-4xl);
   line-height: var(--size-3xl);
   font-weight: 800;
 }
 
-.hero__sub-title {
-  color: var(--clr-lightmaincolor);
-  font-weight: 500;
-  max-width: 93%;
-  font-size: var(--size-xs);
-  line-height: var(--size-sm);
+.title__subtext {
+  position: absolute;
+  bottom: -1;
+  margin-top: 0.5em;
+  left: 0;
+  font: italic 400 0.7em "DM Serif Display", serif;
+  color: var(--clr-maincolor);
 }
 
-
-.hero__image {
-  width: 40%;
-  display: inline;
-  margin-top: 3em;
+.hero__sub-title {
+  color: var(--clr-maincolor);
+  font-weight: 500;
+  max-width: 90%;
+  font-size: var(--size-xs);
+  line-height: var(--size-lg);
+  margin-top: var(--size-xl);
+  opacity: 50%;
 }
 
 .hero__left {
@@ -43,114 +58,127 @@ body {
   padding-bottom: var(--size-6xl);
 }
 
-.hero__button {
-  font-size: var(--size-xs);
-  display: flex;
-
-  .arrow {
-    margin-left: 1em;
-  }
-}
-
 /* xs */
 @media (min-width: 475px) {
   .hero__title {
-    color: var(--clr-maincolor);
-    font-size: var(--size-3xl);
-    line-height: var(--size-3xl);
-    font-weight: 800;
+    font-size: var(--size-5xl);
+  }
+  .hero__sub-title {
+    max-width: 85%;
+    margin-top: var(--size-2xl);
   }
 }
 
 /* sm */
 @media (min-width: 640px) {
-  body {
-    padding-inline: none;
-  }
-
   .hero {
-    height: 33em;
-    flex-direction: row;
-  }
-
-  .hero__left {
-    align-items: start;
-    gap: var(--size-2xl);
-    margin-left: 1em;
+    height: 40.8125em;
+    margin-top: var(--size-3xl);
   }
 
   .hero__title {
-    text-align: start;
-    font-size: calc(var(--size-3xl) + 0.3em);
-    line-height: var(--size-5xl);
-    font-weight: 800;
+    font-size: var(--size-7xl);
   }
-
   .hero__sub-title {
-    text-align: start;
-    line-height: 1.5em;
-    max-width: 95%;
-    font-size: var(--size-sm);
+    margin-top: var(--size-5xl);
+    margin-bottom: var(--size-4xl);
+    max-width: 90%;
+    font-size: var(--size-base);
   }
 
-  .hero__image {
-    padding-top: 0;
-    width: 95%;
-    display: inline;
+  .title__subtext {
+    margin-top: 1em;
+    font-size: var(--size-base);
   }
+
+
 }
 
 /* md */
 @media (min-width: 768px) {
+
+  body {
+    padding-inline: 0;
+  }
+
+  .hero {
+    flex-direction: row;
+    margin-top: var(--size-1xl);
+  }
+
   .hero__left {
-    gap: var(--size-2xl);
-    margin-left: 2em;
+    text-align: start;
+    align-items: start;
+    
   }
 
   .hero__title {
-    font-size: calc(var(--size-3xl) + 1.1em);
-    line-height: var(--size-5xl);
-    max-width: 95%;
+    font-size: var(--size-5xl);
   }
 
   .hero__sub-title {
-    line-height: 1.5em;
-    max-width: 95%;
+    margin-top: var(--size-4xl);
+    margin-bottom: var(--size-1xl);
+    max-width: 100%;
     font-size: var(--size-sm);
   }
 
-  .hero__button {
+  .title__subtext {
+    margin-top: .5em;
     font-size: var(--size-base);
+  }
+
+  .hero__button {
+    
+  }
+  .hero__image {
+    width: 100%;
   }
 }
 
 /* lg */
 @media (min-width: 1024px) {
-}
-
-@media (min-width: 1280px) {
-  .hero {
-    height: 40em;
-  }
-
-  .hero__left {
-    gap: var(--size-4xl);
-    margin-left: 2em;
-  }
-
   .hero__title {
-    font-size: calc(var(--size-3xl) + 3em);
-    line-height: var(--size-7xl);
-    max-width: 95%;
+    font-size: var(--size-7xl);
   }
+
   .hero__sub-title {
-    line-height: 1.5em;
-    max-width: 80%;
-    font-size: var(--size-lg);
+    margin-top: var(--size-4xl);
+    margin-bottom: var(--size-1xl);
+    max-width: 70%;
+    font-size: var(--size-sm);
+  }
+
+  .title__subtext {
+    margin-top: 1em;
+    font-size: var(--size-base);
   }
 
   .hero__image {
-    width: 100%;
+   margin-top: 4em;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .hero__title {
+    font-size: calc(var(--size-7xl) + .5em);
+  }
+
+  .hero__sub-title {
+    margin-top: var(--size-4xl);
+    margin-bottom: var(--size-1xl);
+    max-width: 70%;
+    font-size: var(--size-sm);
+  }
+
+  .title__subtext {
+    margin-top: 1em;
+    font-size: var(--size-base);
+  }
+
+  .hero__image {
+   margin-top: 4em;
   }
 }
 
