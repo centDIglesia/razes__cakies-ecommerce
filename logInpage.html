@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=poppins@100,101,200,201,300,301,400,401,500,501,600,601,700,701,800,801,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <title>e-commerce</title>
+  </head>
+  <body>
+    <!--web size navigation var-->
+    <header>
+      <div class="header container">
+        <img src="/images/main__logo.png" class="main__logo" alt="" />
+
+        <nav>
+          <ul class="header__menu">
+            <li><a class="header_link" href="index.html">Home</a></li>
+            <li><a class="header_link" href="#About us">About us</a></li>
+            <li><a class="header_link" href="#Products">Products</a></li>
+            <li><a class="header_link" href="#Contacts">Contacts</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__right">
+          <a href="#" class="cart__icon">
+            <i class="ri-shopping-basket-fill"></i>
+          </a>
+
+          <div class="header__line"></div>
+
+          <div class="login__button">
+            <a href="#" class="btn"> Log in </a>
+          </div>
+
+          <a class="header__bars">
+            <i class="ri-menu-fill"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+
+    <main>
+      <section class="LogIn__page container">
+        <div class="login__left">
+          <img src="/images/logIn__sideImage.png" alt="" class="login__image" />
+        </div>
+        <div class="login__Right">
+          <div class="form signin" id="signin-form">
+            <div class="form__content">
+              <h1 class="login__title">Welcome</h1>
+              <p class="login__sub-title">Please Enter your details.</p>
+
+              <form action="#">
+              
+                <div class="field input__field">
+                  <input type="email" placeholder="Email" class="Email" />
+                </div>
+
+               
+                <div class="field input__field ">
+                  <input type="Password" placeholder="Password" class="Password" />
+                  <i class="eye__icon ri-eye-off-line"></i>
+                </div>
+
+                <div class="form__link forgot__pass">
+                  <a href="">Forgot Password?</a>
+                </div>
+
+                <div class="field button__field">
+                  <button type="submit" class="btn login__btn">Sign in</button>
+                </div>
+
+                <div class="form__link">
+                  <span>
+                    Don't have an account?
+                    <a href="#" class="create_account" id="show-signup">Create account here.</a>
+                  </span>
+                </div>
+              </form>
+
+              
+            </div>
+
+          </div>
+
+          <div class="form signup" id="signup-form">
+            <div class="form__content">
+              <h1 class="login__title">Get started.</h1>
+              <p class="login__sub-title">Please Enter your details.</p>
+
+              <form action="#">
+              
+            
+               
+                <div class="field input__field">
+                  <input type="text" placeholder="Username" class="Username" />
+                </div>
+
+                <div class="field input__field">
+                  <input type="email" placeholder="Email" class="Email" />
+                </div>
+
+                <div class="field input__field">
+                  <input type="Password" placeholder="Password" class="Password" />
+
+                  <i class="eye__icon ri-eye-off-line"></i>
+                </div>   
+
+                <div class="field input__field">
+                  <input type="Password" placeholder="Confirm Password" class="Cpassword" />
+                </div>   
+
+               
+                           
+
+                <div class="field button__field">
+                  <button type="submit" class="btn login__btn">Sign in</button>
+                </div>
+
+                <div class="form__link">
+                  <span>
+                   Already have an Account?
+                    <a href="#" class="create_account" id="show-signin">Create account here.</a>
+                  </span>
+                </div>
+              </form>
+
+              
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
