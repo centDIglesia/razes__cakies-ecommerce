@@ -8,11 +8,6 @@ import { toggleForms,togglePasswordVisibility } from '/src/scripts/loginform-tog
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  toggleForms();
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
     toggleForms();
     togglePasswordVisibility();
   });
