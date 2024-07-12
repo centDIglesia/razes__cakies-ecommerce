@@ -3,18 +3,25 @@ import "../styles/style.css";
 import "../styles/components/header.css";
 import "../styles/components/hero.css";
 import "../styles/components/login.css";
+import "../styles/components/featured.css";
 import "../styles/utils.css";
 import {
   toggleForms,
   togglePasswordVisibility,
 } from "/src/scripts/loginform-toggle";
-import { login } from "/src/scripts/loginAPI/";
-import { signup } from "/src/scripts/signupAPI/";
-import { getFeaturedProducts } from "./scripts/featuredProducts";
+import { login } from "./scripts/loginAPI";
+import { signup } from "./scripts/signupAPI/";
+import { setupSlider } from './scripts/slider';
+//import { getFeaturedProducts } from "./scripts/featuredProducts";
+
+import displayFeaturedProducts from "./scripts/displayFeatured";
+
+setupSlider();
+
 
 document.addEventListener("DOMContentLoaded", () => {
-  getFeaturedProducts();
-
+  //getFeaturedProducts();
+  displayFeaturedProducts();
   toggleForms();
   togglePasswordVisibility();
 
@@ -40,3 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Login form not found");
   }
 });
+
+
