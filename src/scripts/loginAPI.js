@@ -1,4 +1,4 @@
-const apiUrlLogin = 'https://localhost:7078/api/CakiesApp/login';
+const apiUrlLogin = 'https://localhost:7078/api/User/login';
 
 export async function login() {
     const email = document.getElementById('loginEmail').value;
@@ -26,11 +26,13 @@ export async function login() {
 
         const data = await response.json();
         localStorage.setItem('token', data.token);
-        console.log("Login successful");
+        alert("Logged in successful");
     } catch (error) {
         console.error('Error:', error);
         alert("Invalid Credentials");
-        email = "";
-        password = "";
+    }
+    finally {
+        document.getElementById('loginEmail').value = '';
+        document.getElementById('loginPassword').value = '';
     }
 }

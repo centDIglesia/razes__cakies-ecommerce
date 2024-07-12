@@ -7,10 +7,10 @@ import '../styles/utils.css';
 import { toggleForms, togglePasswordVisibility } from '/src/scripts/loginform-toggle';
 import { login } from '/src/scripts/loginAPI/';
 import { signup } from '/src/scripts/signupAPI/';
-import { getFeaturedProducts } from './scripts/featuredProducts';
+// import { getFeaturedProducts } from './scripts/featuredProducts';
 
 document.addEventListener('DOMContentLoaded', () => {
-  getFeaturedProducts();
+  // getFeaturedProducts();
 
   toggleForms();
   togglePasswordVisibility();
