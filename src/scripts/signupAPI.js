@@ -1,4 +1,4 @@
-const apiUrl = 'https://localhost:7078/api/CakiesApp';
+const apiUrl = 'https://localhost:7078/api/User/register';
 
 const unSignUp = document.getElementById("unSignUp");
 const emailSignUp = document.getElementById("emailSignUp");
@@ -30,17 +30,30 @@ export async function signup() {
             });
 
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                if (response.status === 400) {
+                    alert("Email already exist.");
+                }
+                if (response.status === 500) {
+                    throw new Error('Internal server error: Please try again later');
+                } else {
+                    const errorMessage = await response.text();
+                    throw new Error(errorMessage || 'Login failed');
+                }
             }
 
             const data = await response.json();
-            console.log('Success:', data);
+            localStorage.setItem('token', data.token);
+            alert("Registered Successfully!")
         } catch (error) {
             console.error('Error:', error);
+        } finally {
+            unSignUp.value = '';
+            emailSignUp.value = '';
+            pwSignUp.value = '';
+            cPwSignUp.value = '';
         }
     } else {
         alert("Passwords do not match.");
-
         // Remove password contents
         pwSignUp.value = "";
         cPwSignUp.value = "";
