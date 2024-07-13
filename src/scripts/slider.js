@@ -1,7 +1,7 @@
 let slideIndex = 0;
 let slideInterval;
 
-function startAutoScroll(intervalTime = 5000) {
+function startAutoScroll(intervalTime = 3000) {
   slideInterval = setInterval(autoScroll, intervalTime);
 }
 

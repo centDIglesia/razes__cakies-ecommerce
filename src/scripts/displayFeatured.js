@@ -21,12 +21,12 @@ export default function displayFeaturedProducts() {
     <div class="featured__Info-button">
 
       <a href="#" class="btn">
-        View Products
-        <i class="ri-arrow-right-line arrow"></i>
+        Add to cart
+  
       </a>
       <span class="line"></span>
 
-      <p>${fProducts.price}</p>
+      <p class="fproduct__price">	&#8369 ${fProducts.price}</p>
     </div>
   </div>
 </div>
