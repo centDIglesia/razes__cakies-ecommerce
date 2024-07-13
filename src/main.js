@@ -5,6 +5,7 @@ import "../styles/components/hero.css";
 import "../styles/components/login.css";
 import "../styles/components/featured.css";
 import "../styles/components/product-range.css";
+import "../styles/components/popular.css"
 import "../styles/utils.css";
 import {
   toggleForms,
@@ -14,11 +15,18 @@ import { login } from "./scripts/loginAPI";
 import { signup } from "./scripts/signupAPI/";
 import { setupSlider } from './scripts/slider';
 import displayFeaturedProducts from "./scripts/displayFeatured";
+import displayRangeProducts from "./scripts/displayProductsRange";
+import displayPopularProducts from "./scripts/displayPopularProducts";
+
+
 
 setupSlider();
 
 document.addEventListener("DOMContentLoaded", () => {
+  
   displayFeaturedProducts();
+  displayRangeProducts();
+  displayPopularProducts();
   toggleForms();
   togglePasswordVisibility();
 

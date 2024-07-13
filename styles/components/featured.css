@@ -31,6 +31,7 @@ scroll-snap-align: start;
   font-weight: 800;
   margin-left: var(--size-2xl);
   margin-bottom: var(--size-4xl);
+  text-align: center;
 }
 
 .fproduct__price{
@@ -58,7 +59,7 @@ align-items: center;
 gap: var(--size-2xl);
 }
 .line{
-    border: 1px solid var(--clr-slate300);
+    border: 1px solid var(--clr-lightermaincolor);
     padding-top: 1.5em;
 }
 .featured__Images {

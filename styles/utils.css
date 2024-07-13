@@ -35,7 +35,10 @@
   box-shadow: 0 14px 28px rgba(121, 79, 66, 0.25),
     0 10px 10px rgba(121, 79, 66, 0.22), 0 0 120px -10px var(--clr-maincolor);
 }
-
+.line{
+    border: 1px solid var(--clr-lightermaincolor);
+    padding-top: 1.5em;
+}
 .container {
   width: 100%;
   margin-left: auto;

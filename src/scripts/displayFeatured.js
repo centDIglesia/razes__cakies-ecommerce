@@ -1,4 +1,4 @@
-const apiUrl = 'https://localhost:7078/api/Featured';
+const apiUrl = "https://localhost:7078/api/Featured";
 
 export default async function displayFeaturedProducts() {
   let featuredProductHTML = "";
@@ -22,7 +22,7 @@ export default async function displayFeaturedProducts() {
           </div>
 
           <div class="featured__Info">
-            <div class="featured__Info-description">
+              <div class="featured__Info-description">
               <h2>${fProducts.title}</h2>
               <p>${fProducts.description}</p>
             </div>

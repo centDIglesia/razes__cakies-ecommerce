@@ -6,13 +6,14 @@
   padding-bottom: 2rem;
   position: relative;
   z-index: 9999;
-
 }
 
-.main__logo{
-    width: var(--size-6xl);
+.main__logo {
+  width: var(--size-6xl);
 }
-.header__menu, .login__button,.header__line {
+.header__menu,
+.login__button,
+.header__line {
   display: none;
 }
 
@@ -23,13 +24,13 @@ nav {
 
 .header__bars {
   color: var(--clr-maincolor);
-font-size: var(--size-2xl);
+  font-size: var(--size-2xl);
 
   display: inline-block;
   padding: 0;
 }
 
-.header__right{
+.header__right {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,26 +38,28 @@ font-size: var(--size-2xl);
 }
 
 .cart__icon {
-    color: var(--clr-maincolor);
-    font-size: var(--size-2xl);
-    cursor: pointer;
+  color: var(--clr-maincolor);
+  font-size: var(--size-2xl);
+  cursor: pointer;
+}
+
+@media (min-width: 475px) {
+  .main__logo {
+    width: var(--size-7xl);
   }
 
- @media (min-width: 475px) {
-    .main__logo{
-        width: var(--size-7xl);
-    }
+  .line {
+    display: none;
+   }
 }
 
 /* sm */
- @media (min-width: 640px) {
+@media (min-width: 640px) {
+  .main__logo {
+    width: var(--size-7xl);
+  }
+}
 
-    .main__logo{
-        width: var(--size-7xl);
-    }
- } 
-
- 
 /* md */
 @media (min-width: 768px) {
   .header__menu {
@@ -66,14 +69,14 @@ font-size: var(--size-2xl);
     align-items: center;
     gap: var(--size-3xl);
   }
- 
-  .header__right{  
+
+  .header__right {
     gap: var(--size-4xl);
   }
-  .login__button,.header__line {
+  .login__button,
+  .header__line {
     display: block;
   }
-
 
   .header_link {
     text-decoration: none;
@@ -105,12 +108,9 @@ font-size: var(--size-2xl);
     color: var(--clr-maincolor);
   }
 
-  .header__line {
-    border: 1px solid var(--clr-slate300);
-    padding-top: 1.5em;
+  .line {
+   display: block;
   }
-
-
 
   .header__bars {
     display: none;
