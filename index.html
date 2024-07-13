@@ -39,7 +39,9 @@
           </ul>
         </nav>
         <div class="header__right">
-          <a href="#" class="cart__icon"><i class="ri-shopping-basket-fill"></i></a>
+          <a href="#" class="cart__icon"
+            ><i class="ri-shopping-basket-fill"></i
+          ></a>
           <div class="header__line"></div>
           <div class="login__button">
             <a href="/logInpage.html" class="btn"> Log in </a>
@@ -61,21 +63,45 @@
           </p>
           <div class="hero__button">
             <a href="#" class="btn">
-              View Products
+              View Product
+
               <i class="ri-arrow-right-line arrow"></i>
             </a>
           </div>
         </div>
         <div class="hero__right">
-          <img class="hero__image" src="/public/images/hero__image.svg" alt="" />
+          <img class="hero__image" src="/images/hero__image.svg" alt="" />
         </div>
       </section>
     </main>
 
-      <!--Generate the featured products based on the API-->
-    <section id="featuredProductsSection">
-      
+    <!--Generate the featured products based on the API-->
+    <section class="featured section">
+      <div class="featured__Products container">
+        <h2 class="featured__title">Featured Products</h2>
+        <div class="featured__Products-slider">
+          <div class="slide-container"></div>
+
+          <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <section class="Products-range section">
+      <div class="Products-range__container container">
+        <h2 class="product-range__title">Our Product Range</h2>
+
+        
+      </div>
+
+
+    </section>
+
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
+ 
