@@ -1,31 +1,3 @@
-
-/*
-
-const apiUrl = 'https://localhost:7078/api/Featured';
-
-export let featuredProductsData = []; 
-
-export async function getFeaturedProducts() {
-    try {
-        const res = await fetch(apiUrl);
-
-        if (!res.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        const data = await res.json();
-        featuredProductsData = data; // Store the data in the array
-        console.log(featuredProductsData); 
-    }
-    catch (error) {
-        console.error('Error:', error);
-    }
-}
-
-
-*/ 
-
-
 export const featuredProductsData = [
   {
     id: "1",

@@ -12,15 +12,11 @@ import {
 import { login } from "./scripts/loginAPI";
 import { signup } from "./scripts/signupAPI/";
 import { setupSlider } from './scripts/slider';
-//import { getFeaturedProducts } from "./scripts/featuredProducts";
-
 import displayFeaturedProducts from "./scripts/displayFeatured";
 
 setupSlider();
 
-
 document.addEventListener("DOMContentLoaded", () => {
-  //getFeaturedProducts();
   displayFeaturedProducts();
   toggleForms();
   togglePasswordVisibility();
