@@ -4,6 +4,7 @@ import "../styles/components/header.css";
 import "../styles/components/hero.css";
 import "../styles/components/login.css";
 import "../styles/components/featured.css";
+import "../styles/components/product-range.css";
 import "../styles/utils.css";
 import {
   toggleForms,

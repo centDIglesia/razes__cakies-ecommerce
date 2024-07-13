@@ -1,0 +1,29 @@
+.product-range__card-cake {
+  background-color: var(--clr-accentcolor);
+  width: 13em;
+  height: 13em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  color: var(--clr-lightmaincolor);
+  position: relative;
+}
+
+.card-cake p {
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--size-lg);
+}
+
+.card-cake__icon {
+  background-color: var(--clr-maincolor);
+  padding: 2em;
+  border-radius: 50%;
+}
+
+.card-cake {
+  position: absolute;
+ top: 50;
+}
