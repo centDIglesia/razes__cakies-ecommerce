@@ -1,23 +1,23 @@
 const apiUrl = 'https://localhost:7078/api/User/register';
 
-const unSignUp = document.getElementById("unSignUp");
-const emailSignUp = document.getElementById("emailSignUp");
-const pwSignUp = document.getElementById("pwSignUp");
-const cPwSignUp = document.getElementById("cPwSignUp");
+// Modify ko tong unsignup, gawin kong firstname at lastname yung request
+// bale, lagyan mo na lang input na may ganitong id
+
+const firstname = document.getElementById("fnSignUp").value;
+const lastname = document.getElementById("lnSignUp").value;
+const emailSignUp = document.getElementById("emailSignUp").value;
+const pwSignUp = document.getElementById("pwSignUp").value;
+const cPwSignUp = document.getElementById("cPwSignUp").value;
 
 export async function signup() {
-    const userName = unSignUp.value;
-    const email = emailSignUp.value;
-    const password = pwSignUp.value;
-    const confirmPassword = cPwSignUp.value;
-
     // If passwords matched, try saving the values to the db using api
-    if (password === confirmPassword) {
+    if (pwSignUp === cPwSignUp) {
         const newUser = {
             userID: 0,
-            userName: userName,
-            email: email,
-            password: password
+            firstName: firstname,
+            lastName: lastname,
+            email: emailSignUp,
+            password: pwSignUp
         };
 
         try {
@@ -42,12 +42,13 @@ export async function signup() {
             }
 
             const data = await response.json();
-            localStorage.setItem('token', data.token);
+            // localStorage.setItem('token', data.token);
             alert("Registered Successfully!")
         } catch (error) {
             console.error('Error:', error);
         } finally {
-            unSignUp.value = '';
+            firstname.value = '';
+            lastname.value = '';
             emailSignUp.value = '';
             pwSignUp.value = '';
             cPwSignUp.value = '';

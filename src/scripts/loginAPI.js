@@ -6,7 +6,9 @@ export async function login() {
 
     try {
         const user = {
-            userName: "string",
+            // Add placeholder here coz email at pass lang need
+            firstName: "string", 
+            lastName: "string",
             email: email,
             password: password
         };
