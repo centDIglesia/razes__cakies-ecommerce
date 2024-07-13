@@ -18,8 +18,6 @@ import displayFeaturedProducts from "./scripts/displayFeatured";
 import displayRangeProducts from "./scripts/displayProductsRange";
 import displayPopularProducts from "./scripts/displayPopularProducts";
 
-
-
 setupSlider();
 
 document.addEventListener("DOMContentLoaded", () => {

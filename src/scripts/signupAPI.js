@@ -1,16 +1,16 @@
 const apiUrl = 'https://localhost:7078/api/User/register';
 
-// Modify ko tong unsignup, gawin kong firstname at lastname yung request
-// bale, lagyan mo na lang input na may ganitong id
-
-const firstname = document.getElementById("fnSignUp").value;
-const lastname = document.getElementById("lnSignUp").value;
-const emailSignUp = document.getElementById("emailSignUp").value;
-const pwSignUp = document.getElementById("pwSignUp").value;
-const cPwSignUp = document.getElementById("cPwSignUp").value;
-
 export async function signup() {
-    // If passwords matched, try saving the values to the db using api
+    // Modify ko tong unsignup, gawin kong firstname at lastname yung request
+    // bale, lagyan mo na lang input na may ganitong id
+    const firstname = document.getElementById("fnSignUp").value; // ito dinagdag
+    const lastname = document.getElementById("lnSignUp").value; // saka ito
+    const emailSignUp = document.getElementById("emailSignUp").value;
+    const pwSignUp = document.getElementById("pwSignUp").value;
+    const cPwSignUp = document.getElementById("cPwSignUp").value;
+
+    // If passwords matched, create new user object and then
+    // try to save it to the database using api
     if (pwSignUp === cPwSignUp) {
         const newUser = {
             userID: 0,
