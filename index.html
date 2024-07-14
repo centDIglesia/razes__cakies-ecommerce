@@ -27,7 +27,7 @@
     <title>e-commerce</title>
   </head>
   <body>
-     <!--nav-->
+    <!--nav-->
     <header>
       <div class="header container">
         <img src="/images/main__logo.png" class="main__logo" alt="" />
@@ -40,19 +40,20 @@
           </ul>
         </nav>
         <div class="header__right">
-          <a href="#" class="cart__icon"
-            ><i class="ri-shopping-basket-fill"></i
-          ></a>
+          <a href="#" class="cart__icon">
+            <i class="ri-shopping-basket-2-fill cart-close"></i>
+            <i class="ri-shopping-basket-fill cart-open"></i>
+          </a>
           <div class="line"></div>
           <div class="login__button">
-            <a href="/logInpage.html" class="btn"> Log in </a>
+            <a href="/loginPage/logInpage.html" class="btn"> Log in </a>
           </div>
           <a class="header__bars"><i class="ri-menu-fill"></i></a>
         </div>
       </div>
     </header>
     <main>
-       <!--hero-->
+      <!--hero-->
       <section class="hero container">
         <div class="hero__left">
           <div class="hero__maintext">
@@ -78,7 +79,7 @@
     </main>
 
     <!--Generate the featured products based on the API-->
-      <!--Featured-->
+    <!--Featured-->
     <section class="featured section">
       <div class="featured__Products container">
         <h2 class="featured__title">Featured Products</h2>
@@ -99,9 +100,7 @@
       <div class="Products-range__container container">
         <h2 class="product-range__title">Our Product Range</h2>
 
-        <div class="product-range__card">
-
-        </div>
+        <div class="product-range__card"></div>
       </div>
     </section>
     <!--Popular Products-->
@@ -109,20 +108,92 @@
       <div class="Popular__products container">
         <h2 class="Popular__products__title">Popular products</h2>
 
-        <div class="Popular__products__card-container">
-         
-        </div>
-        
+        <div class="Popular__products__card-container"></div>
       </div>
     </section>
 
     <!--Size charts-->
     <section class="sizechart section">
       <div class="pricing__size-chart container">
-        <h2 class="pricing__size-title">Pricing Size chart</h2>
+        <div class="pricing__size">
+          <h2 class="pricing__size-title">Pricing Size chart</h2>
+          <a href="" class="view__sizechart btn">view full chart</a>
+        </div>
 
-        
-        
+        <div class="pricing__chart-image">
+          <img
+            src="/images/sizechart/sizechart__1.svg"
+            alt=""
+            class="size__chart-image1"
+          />
+
+          <img
+            src="public/images/sizechart/sizechart__2.svg"
+            alt=""
+            class="size__chart-image1"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!--Full-Size charts-->
+
+    <div class="full__size-chart">
+      <i class="close ri-close-circle-fill"></i>
+      <h3>Pricing size chart</h3>
+
+      <div class="full__size">
+        <img src="public/images/sizechart/full__size-chart1.svg" alt="" />
+        <img src="public/images/sizechart/full__size-chart2.svg" alt="" />
+        <img src="public/images/sizechart/full__size-chart3.svg" alt="" />
+        <img src="public/images/sizechart/full__size-chart4.svg" alt="" />
+      </div>
+    </div>
+
+    <!--Customer feedback-->
+    <section class="customer-feedback section">
+      <div class="customer-feedback__container container">
+        <div class="seperator"></div>
+        <div class="feedback__card">
+          <div class="customer-feedback__info">
+            <h3 class="feedback__title">Our customer Feedback</h3>
+            <p class="feedback__description">
+              At Raze's cakies, we believe in the power of shared experiences.
+              Our customers aren’t just buyers; they’re part of our sweet
+              journey. Here’s what they have to say about our delicacies:
+            </p>
+          </div>
+
+          <div class="customer-feedback__images">
+            <div class="customer__feedback-card">
+              <img src="public/images/customer/user__2.svg" alt="" />
+              <div class="customer__feedback-description">
+                <h5 class="customer__name">Sarah Thompson</h5>
+                <p class="customer__comment">
+                  "Perfect cake! Stunning design and flavors were absolutely delicious."
+                </p>
+              </div>
+            </div>
+            <div class="customer__feedback-card custom_large">
+              <img src="public/images/customer/user__1.svg" alt="" />
+              <div class="customer__feedback-description">
+                <h5 class="customer__name">John Smith</h5>
+                <p class="customer__comment">
+                  "Thanks to Raze's cakies for the beautiful custom wedding cake. Elegant, just as I envisioned, and our guests loved it!"
+                </p>
+              </div>
+            </div>
+            <div class="customer__feedback-card">
+              <img src="public/images/customer/user__3.svg" alt="" />
+              <div class="customer__feedback-description">
+                <h5 class="customer__name">Emily Davis</h5>
+                <p class="customer__comment">
+                  "Cake exceeded expectations! Beautiful design and flavors were absolutely delicious. Highly recommended!"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

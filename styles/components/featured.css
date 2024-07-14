@@ -58,10 +58,8 @@ display: flex;
 align-items: center;
 gap: var(--size-2xl);
 }
-.line{
-    border: 1px solid var(--clr-lightermaincolor);
-    padding-top: 1.5em;
-}
+
+
 .featured__Images {
   width: 50%;
   display: grid;

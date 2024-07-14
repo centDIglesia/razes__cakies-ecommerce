@@ -58,6 +58,7 @@
 .popular__description {
   color: var(--clr-lightmaincolor);
   font-size: var(--size-xs);
+  line-height: var(--size-xs);
 }
 
 .popular__ratings {

@@ -8,6 +8,14 @@
   z-index: 9999;
 }
 
+.cart-open {
+  display: none;
+}
+
+.cart-close {
+  display: block;
+}
+
 .main__logo {
   width: var(--size-6xl);
 }
@@ -50,7 +58,7 @@ nav {
 
   .line {
     display: none;
-   }
+  }
 }
 
 /* sm */
@@ -109,7 +117,7 @@ nav {
   }
 
   .line {
-   display: block;
+    display: block;
   }
 
   .header__bars {
