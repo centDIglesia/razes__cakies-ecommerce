@@ -8,6 +8,7 @@
   justify-content: space-around;
   flex-direction: column;
   padding: 2em 2em !important;
+  margin-bottom: 3em;
 }
 .login__image {
   width: 7em;

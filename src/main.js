@@ -8,6 +8,7 @@ import "../styles/components/product-range.css";
 import "../styles/components/popular.css";
 import "../styles/components/chart.css";
 import "../styles/components/feedback.css"
+import "../styles/components/footer.css"
 import "../styles/utils.css";
 
 import { setupSlider } from "./scripts/slider";
