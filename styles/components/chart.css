@@ -27,7 +27,7 @@ Full size view
 
 .full__size-chart {
   position: fixed;
-  background-color: var(--clr-maincolorRGBA);
+  background-color:  rgba(121, 79, 66, .9);
   top: -4em;
   bottom: 4em;
   width: 100%;

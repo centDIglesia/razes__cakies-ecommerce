@@ -16,6 +16,25 @@
 /* 2xl */
 /* @media (min-width: 1536px) {} */
 
+.current__page{
+  color: var(--clr-maincolor);
+  font-weight: 700;
+}
+
+.current__page:after{
+
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  bottom: -1px;
+  left: 50%;
+  border-radius: 50%;
+  background-color: var(--clr-maincolor);
+  transform: translateX(-50%);
+}
+
+
 .btn {
   display: inline-block;
   font-weight: 600;

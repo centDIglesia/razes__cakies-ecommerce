@@ -1,4 +1,7 @@
-
+.user__name{
+  display: flex;
+  gap:1em;
+}
 .LogIn__page {
   background-color: #fbf6f3;
   border-radius: 0.5rem;

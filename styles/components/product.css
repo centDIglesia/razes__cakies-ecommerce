@@ -1,0 +1,73 @@
+/*type selection*/
+.Products-range{
+    margin-top: 2em;
+}
+.product-range__card {
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5em;
+  }
+  
+  .product-range__card-cake {
+    background-color: var(--clr-lightaccentcolor);
+    width: 13em;
+    height: 12em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3em;
+    color: var(--clr-lightmaincolor);
+    position: relative;
+    border-radius: 0.5em;
+    transition: background-color .3s ease;
+  }
+  .product-range__card-cake:hover{
+      background-color: var(--clr-maincolor);
+      color:  var(--clr-maincolor);
+  }
+  
+  .product-range__card-cake:hover .card-cake{
+    
+      bottom: 39px;
+     
+  }
+  
+  
+  .product-range__card-cake:hover .card-cake p{
+     color: white;
+     
+  }
+  
+  
+  .product-range__title {
+    color: var(--clr-maincolor);
+    font-size: var(--size-4xl);
+    font-weight: 800;
+    margin-bottom: var(--size-4xl);
+    text-align: center;
+  }
+  .card-cake p {
+    text-align: center;
+    font-weight: 700;
+    font-size: var(--size-lg);
+  }
+  
+  .card-cake__icon {
+    background-color: var(--clr-maincolor);
+    padding: 2em;
+    border-radius: 50%;
+  }
+  
+  .card-cake {
+    position: absolute;
+    bottom: -65px;
+    transition: bottom .3s ease;
+  }
+  .card-cake p {
+    color: var(--clr-maincolor);
+    margin-top: 0.4em;
+  }
+  

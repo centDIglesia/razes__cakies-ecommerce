@@ -8,13 +8,6 @@
   z-index: 9999;
 }
 
-.cart-open {
-  display: none;
-}
-
-.cart-close {
-  display: block;
-}
 
 .main__logo {
   width: var(--size-6xl);
@@ -99,20 +92,8 @@ nav {
     cursor: pointer;
   }
 
-  .header_link::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--clr-maincolor);
-    transition: width 0.3s ease-in-out;
-  }
-
-  .header_link:hover::after,
   .header_link:hover {
-    width: 100%;
+
     color: var(--clr-maincolor);
   }
 
