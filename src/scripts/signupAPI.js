@@ -47,11 +47,11 @@ export async function signup() {
         } catch (error) {
             console.error('Error:', error);
         } finally {
-            firstname.value = '';
-            lastname.value = '';
-            emailSignUp.value = '';
-            pwSignUp.value = '';
-            cPwSignUp.value = '';
+            firstname = '';
+            lastname = '';
+            emailSignUp = '';
+            pwSignUp = '';
+            cPwSignUp = '';
         }
     } else {
         alert("Passwords do not match.");
