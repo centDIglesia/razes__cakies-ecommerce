@@ -9,4 +9,5 @@ import displayAllProducts from "../src/scripts/displayProducts";
 
 document.addEventListener("DOMContentLoaded", () => {
     displayAllProducts();
+    
 });

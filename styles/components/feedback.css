@@ -63,10 +63,12 @@
 .customer__name{
     color: var(--clr-maincolor);
     font-size: var(--size-lg);
+    margin-bottom: .3em;
 }
 
 .customer__comment{
     color: var(--clr-lightmaincolor);
+    line-height: 1.5em;
     font-size: .7em;
 }
 

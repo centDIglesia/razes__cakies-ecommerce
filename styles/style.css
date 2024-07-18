@@ -75,7 +75,7 @@ strong {
 
 /* Scrollbar */
 body::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 body::-webkit-scrollbar-track {
@@ -83,6 +83,6 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--clr-rose);
-  outline: 1px solid var(--clr-rose);
+  background-color: var(--clr-maincolor);
+  outline: 1px solid var(--clr-maincolor);
 }
