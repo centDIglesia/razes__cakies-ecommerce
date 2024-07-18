@@ -1,15 +1,23 @@
-// import { allproducts } from "../Data/all-Products";
-
 const apiUrl = 'https://localhost:7078/api/Product';
 
-export function displayAllProducts() {
+export async function displayAllProducts() {
   let allProductHTML = "";
+  let allProducts = [];
+  try {
+    const res = await fetch(apiUrl);
 
-  // Assuming 'allproducts' is an array of product objects
-  allproducts.forEach((product) => {
-    allProductHTML += `
+    if (!res.ok) {
+      console.log("Error in getting products.");
+      return;
+    }
+
+    const data = await res.json();
+    allProducts = data;
+    // Assuming 'allproducts' is an array of product objects
+    allProducts.forEach((product) => {
+      allProductHTML += `
       <div class="product__card">
-        <img src="${product.image}" alt="${product.id}" />
+        <img src="data:image/jpeg;base64,${product.image}" alt="${product.id}" />
         <div class="product-card__description">
           <h3 class="product__name">${product.productName}</h3>
           <span class="product__price">$ ${product.price}</span>
@@ -25,12 +33,16 @@ export function displayAllProducts() {
         </span>
       </div>
     `;
-  });
+    });
+  } catch (error) {
+    console.log(error);
+  }
 
   document.querySelector(".products__list-grid").innerHTML = allProductHTML;
+  showaddtoCartForm(allProducts); // Pass the fetched products to the showaddtoCartForm function
 }
 
-export function showaddtoCartForm() {
+export function showaddtoCartForm(allProducts) {
   const customizeBtns = document.querySelectorAll(".product__customize-btn");
   const addToCartForm = document.querySelector(".add-to-cart__container");
 
@@ -39,7 +51,7 @@ export function showaddtoCartForm() {
       event.preventDefault(); // Prevent the default anchor action
       const productId = parseInt(btn.getAttribute("data-product-id"), 10); // Convert to number
       console.log("Clicked customize button with product ID:", productId);
-      const product = allproducts.find((p) => p.id === productId);
+      const product = allProducts.find((p) => p.id === productId);
       console.log("Found product:", product);
       if (product) {
         addToCartForm.style.display = "flex"; // Show the form
@@ -50,7 +62,7 @@ export function showaddtoCartForm() {
           <div class="add-to-cart-left__form">
             <div class="product__display-image">
               <img
-                src="${product.image}"
+                src="data:image/jpeg;base64,${product.image}"
                 class="add-to-cart__formImg"
                 alt=""
               />
@@ -121,7 +133,7 @@ export function showaddtoCartForm() {
                 <div class="cake__setting-layer-select">
                   <label for="setting-flavor">Cake Flavor</label>
                   <select id="setting-flavor" name="setting-flavor">
-                    <option value=Chocolate moist">Chocolate moist</option>
+                    <option value="Chocolate moist">Chocolate moist</option>
                     <option value="Red velvet moist">Red velvet moist</option>
                     <option value="Vanilla chiffon">Vanilla chiffon</option>
                     <option value="Strawberry chiffon">Strawberry chiffon</option>
@@ -190,7 +202,7 @@ export function showaddtoCartForm() {
                 </div>
   
                 <p class="cake__sub-total">
-                  Subtotal : <span class="cake__total-Amount">P 235.00</span>
+                  Subtotal : <span class="cake__total-Amount">₱ ${product.price}</span>
                 </p>
               </div>
   
@@ -227,3 +239,4 @@ export function updatePrice(elementId, priceClass) {
 // updatePrice('setting-layer', '.setting-layer-price');
 // updatePrice('setting-top', '.setting-top-price');
 // updatePrice('setting-side', '.setting-side-price');
+
