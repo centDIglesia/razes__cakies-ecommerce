@@ -1,13 +1,25 @@
-import { allproducts } from "../Data/all-Products";
+// import { allproducts } from "../Data/all-Products";
 
-export default function displayAllProducts() {
+const apiUrl = 'https://localhost:7078/api/Product';
+
+export default async function displayAllProducts() {
     let allProductHTML = "";
+
+    try {
+      const res = await fetch(apiUrl);
   
-    allproducts.forEach((product) => {
+      if (!res.ok) {
+        console.log("Error in getting products.");
+        return;
+      }
+  
+      const data = await res.json();
+
+      data.forEach((product) => {
         allProductHTML += `
         <div class="product__card">
             <img
-              src="${product.image}"
+              src="data:image/jpeg;base64,${product.image}"
               alt="${product.productName}"
             />
 
@@ -30,6 +42,11 @@ export default function displayAllProducts() {
           </div>
       `;
     });
+    }
+    catch(error)
+    {
+      console.log(error);
+    }
   
     document.querySelector(".products__list-grid").innerHTML = allProductHTML;
 }
