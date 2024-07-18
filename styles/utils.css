@@ -1,3 +1,5 @@
+/*mobi;e first*/
+
 /* xs */
 /* @media (min-width: 475px) {} */
 
@@ -15,6 +17,47 @@
 
 /* 2xl */
 /* @media (min-width: 1536px) {} */
+
+
+/*desktop first*/
+/* 2xl */
+/*@media (max-width: 1535px) {}
+
+/* xl */
+/*@media (max-width: 1279px) {}
+
+/* lg */
+/*@media (max-width: 1023px) {}
+
+/* md */
+/*@media (max-width: 767px) {}
+
+/* sm */
+/*@media (max-width: 639px) {}
+
+/* xs */
+/*@media (max-width: 474px) {}*/
+
+
+
+.current__page{
+  color: var(--clr-maincolor);
+  font-weight: 700;
+}
+
+.current__page:after{
+
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  bottom: -1px;
+  left: 50%;
+  border-radius: 50%;
+  background-color: var(--clr-maincolor);
+  transform: translateX(-50%);
+}
+
 
 .btn {
   display: inline-block;
@@ -35,7 +78,10 @@
   box-shadow: 0 14px 28px rgba(121, 79, 66, 0.25),
     0 10px 10px rgba(121, 79, 66, 0.22), 0 0 120px -10px var(--clr-maincolor);
 }
-
+.line{
+    border: 1px solid var(--clr-lightermaincolor);
+    padding-top: 1.5em;
+}
 .container {
   width: 100%;
   margin-left: auto;

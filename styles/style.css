@@ -7,8 +7,12 @@
   --clr-slate800: #1e293b;
   --clr-maincolor: #794f42;
   --clr-lightmaincolor: #b79083;
+  --clr-lightermaincolor: #794f424f;
   --clr-accentcolor: #efd6c6;
   --clr-lightaccentcolor: #fbf6f3;
+
+  --clr-maincolorRGBA: rgba(121, 79, 66, .4);
+
 
   /* sizes */
   --size-xxs: 0.5rem;
@@ -71,7 +75,7 @@ strong {
 
 /* Scrollbar */
 body::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 body::-webkit-scrollbar-track {
@@ -79,6 +83,6 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--clr-rose);
-  outline: 1px solid var(--clr-rose);
+  background-color: var(--clr-maincolor);
+  outline: 1px solid var(--clr-maincolor);
 }
