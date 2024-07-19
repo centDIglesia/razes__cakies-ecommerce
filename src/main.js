@@ -10,6 +10,8 @@ import "../styles/components/chart.css";
 import "../styles/components/feedback.css"
 import "../styles/components/footer.css"
 import "../styles/utils.css";
+import "../styles/components/journey.css";
+import "../styles/components/faqs.css";
 
 import { setupSlider } from "./scripts/slider";
 import displayFeaturedProducts from "./scripts/displayFeatured";
