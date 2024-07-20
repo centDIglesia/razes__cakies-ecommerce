@@ -17,10 +17,6 @@
   display: none;
 }
 
-.header__menu {
-  display: flex;
-  gap: var(--size-4xl);
-}
 
 .header__bars {
   color: var(--clr-maincolor);
