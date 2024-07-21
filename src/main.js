@@ -12,6 +12,8 @@ import "../styles/components/footer.css"
 import "../styles/utils.css";
 import "../styles/components/journey.css";
 import "../styles/components/faqs.css";
+import "../styles/components/contact.css";
+import "../styles/components/terms.css";
 
 import { setupSlider } from "./scripts/slider";
 import displayFeaturedProducts from "./scripts/displayFeatured";

@@ -1,0 +1,41 @@
+.terms-and-conditions
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2%;
+  color: #794f42;
+}
+
+.content
+{
+  color: #794f42;
+}
+
+.terms-and-conditions {
+  width: 90%; 
+  max-width: 1200px; 
+}
+
+@media (max-width: 768px) {
+  .terms-and-conditions {
+    width: 100%;
+  }
+}
+
+.terms-and-conditions {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.content {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.content {
+  margin-bottom: 1.5em; 
+}
