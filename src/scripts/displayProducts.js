@@ -344,6 +344,9 @@ export function showCustomizeForm(allProducts) {
 
               console.log("Updated cart:", cart);
               refreshProductDisplay();
+
+              addToCartForm.style.display = "none";
+              document.body.style.overflow = "auto";
             
             });
           });
@@ -532,6 +535,10 @@ export function showDefaultForm(allProducts) {
         
                       console.log("Updated cart:", cart);
                       refreshProductDisplay();
+
+                      addToCartForm.style.display = "none";
+                      document.body.style.overflow = "auto";
+
             });
           });
 
