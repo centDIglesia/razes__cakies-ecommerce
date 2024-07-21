@@ -51,7 +51,7 @@
 }
 
 .field input:hover,
-.field textarea: hover {
+.field textarea:hover {
   box-shadow: 0 0 20px rgba(121, 79, 66, .08);
 }
 
