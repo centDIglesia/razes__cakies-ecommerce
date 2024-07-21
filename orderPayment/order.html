@@ -64,9 +64,13 @@
     <main>
       <secrion class="orderPayment">
         <section class="orderPayment-container container">
+            <div class="cart__link"><a class="cart__nav-link" href="../cartPage/cart.html">Cart</a>/<a href="#">Order</a></div>
+            <h1>My Orders</h1>
           <div class="orderPaymentbox">
             <div class="orderPayment__Info">
+              
               <div class="Delivery__Informations-Container">
+
                 <form action="">
                   <span class="orderPayment__title">Delivery Informations</span>
                   <div class="delivery__name">
@@ -127,28 +131,31 @@
                       />
                     </div>
                   </div>
-                  <div>
-                    <label for="customer__number">House number</label>
-                    <input
-                      type="text"
-                      name="customer__number"
-                      id="customer__house-number"
-                      placeholder="House number"
-                    />
+                  <div class="delivery__name">
+                    <div>
+                        <label for="customer__number">House number</label>
+                        <input
+                          type="text"
+                          name="customer__number"
+                          id="customer__house-number"
+                          placeholder="House number"
+                        />
+                      </div>
+    
+                      <div>
+                        <label for="customer__number">Phone number</label>
+                        <input
+                          type="text"
+                          name="customer__number"
+                          id="customer__number"
+                          placeholder="Phone number"
+                        />
+                      </div>
                   </div>
+                 
 
                   <div>
-                    <label for="customer__number">Phone number</label>
-                    <input
-                      type="text"
-                      name="customer__number"
-                      id="customer__number"
-                      placeholder="Phone number"
-                    />
-                  </div>
-
-                  <div>
-                    <label for="ustomer__fname">Additional Info.</label>
+                    <label for="other__address">Additional Info.</label>
                     <textarea
                       name="other__address"
                       id="other__address"
@@ -161,7 +168,29 @@
             </div>
 
             <div class="orderPayment__payment-totals">
-              <span class="orderPayment__title">Delivery Informations</span>
+              <span class="orderPayment__title">Total payment</span>
+                    <table class="cart_total">
+                        <tr>
+                            <td>Sub-total</td>
+                            <td>P <span class="payment__subtotal">38</span></td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Fee</td>
+                            <td>P <span class="payment__delivery-fee">38</span></td>
+                        </tr>
+                        <tr  >
+                            <td class="Total__row">Total</td>
+                            <td class="Total__row">P <span class="payment__delivery-total">38</span></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                <a href="" class="proceed__payemnt-btn btn">Proceed to payment</a>
+                            </td>
+                        </tr>
+                    </table>
+
 
             </div>
           </div>

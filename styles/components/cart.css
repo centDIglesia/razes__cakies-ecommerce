@@ -115,6 +115,7 @@ th {
 
 .table__order-summary td {
   padding: 0.7em;
+  color: var(--clr-lightermaincolor);
 }
 
 td:last-child {
@@ -177,4 +178,16 @@ th:last-child {
   color: var(--clr-maincolor);
   outline: none;
   border:1px solid var(--clr-lightermaincolor);
+}
+
+
+.cart__link{
+  margin-bottom: 1em;
+  color: var(--clr-lightmaincolor);
+  font-size: var(--size-xs);
+  font-weight: 500;
+}
+
+.cart__nav-link:hover{
+color: var(--clr-maincolor);
 }
