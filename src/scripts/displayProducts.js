@@ -1,6 +1,5 @@
 // import { allproducts } from "../Data/all-Products";
 // import { cart } from "../Data/cart";
-
 // API
 import LZString from 'lz-string';
 const apiUrl = 'https://localhost:7078/api/Product';
@@ -107,10 +106,12 @@ export async function displayAllProducts() {
   showDefaultForm(allProducts);// Pass the fetched products to the showaddtoCartForm function
 }
 
-// initialize cart
+/* CART */
+// initialize cart, get the cart from local storage
+// return empty array if no items in the cart
 let cart = getCartFromLocalStorage() || [];
 
-// add cart to local storage
+// add cart to local storage, compress the data
 function saveCartToLocalStorage(cart) {
   try {
     const compressedCart = LZString.compress(JSON.stringify(cart));
@@ -132,6 +133,7 @@ function getCartFromLocalStorage() {
   return null;
 }
 
+/* Form Customization */
 export function showCustomizeForm(allProducts) {
   const customizeBtns = document.querySelectorAll(".product__customize-btn");
   const addToCartForm = document.querySelector(".add-to-cart__container");
