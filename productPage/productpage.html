@@ -30,17 +30,23 @@
     <!--nav-->
     <header>
       <div class="header container">
-        <a href="../index.html"><img src="/images/main__logo.png" class="main__logo" alt="" /></a>
+        <a href="../index.html"
+          ><img src="/images/main__logo.png" class="main__logo" alt=""
+        /></a>
         <nav>
           <ul class="header__menu">
             <li><a class="header_link" href="../index.html">Home</a></li>
             <li><a class="header_link" href="../aboutUs.html">About us</a></li>
             <li>
-              <a class="header_link current__page" href="../productPage/productpage.html"
+              <a
+                class="header_link current__page"
+                href="../productPage/productpage.html"
                 >Products</a
               >
             </li>
-            <li><a class="header_link" href="../contactUs.html">Contacts</a></li>
+            <li>
+              <a class="header_link" href="../contactUs.html">Contacts</a>
+            </li>
           </ul>
         </nav>
         <div class="header__right">
@@ -49,8 +55,12 @@
           </a>
           <div class="line"></div>
           <div class="login__button">
-            <a href="../loginPage/logInpage.html" class="log__in btn"> Log in </a>
-            <a href="../loginPage/logInpage.html" class="log__out btn"> Log out </a>
+            <a href="../loginPage/logInpage.html" class="log__in btn">
+              Log in
+            </a>
+            <a href="../loginPage/logInpage.html" class="log__out btn">
+              Log out
+            </a>
           </div>
           <a class="header__bars"><i class="ri-menu-fill"></i></a>
         </div>
@@ -62,9 +72,7 @@
         <ul class="mobile-nav__menu">
           <li><a class="mobile-nav__link" href="../index.html">Home</a></li>
           <li>
-            <a class="mobile-nav__link" href="../aboutUs.html"
-              >About us</a
-            >
+            <a class="mobile-nav__link" href="../aboutUs.html">About us</a>
           </li>
           <li>
             <a class="mobile-nav__link" href="productpage.html">Products</a>
@@ -74,32 +82,28 @@
             <a class="mobile-nav__link" href="../contactUs.html">Contacts</a>
           </li>
           <li class="mobile-nav__line"></li>
-       
+
           <li>
             <a href="../cartPage/cart.html" class="cart__icon">
               <i class="cart__icon ri-shopping-basket-2-fill"></i>
             </a>
           </li>
           <li>
-            
-              <a href="../loginPage/logInpage.html" class="log__in btn"> Log in </a>
-              <a href="../loginPage/logInpage.html" class="log__out btn"> Log out </a>
-         
+            <a href="../loginPage/logInpage.html" class="log__in btn">
+              Log in
+            </a>
+            <a href="../loginPage/logInpage.html" class="log__out btn">
+              Log out
+            </a>
           </li>
         </ul>
       </nav>
     </div>
     <!-- customize product form -->
-    <section class="add-to-cart__container">
-     
-    </section>
+    <section class="add-to-cart__container"></section>
 
-      <!-- default product form -->
-      <section class="add-to-cart-default__container">
-      
-       
-      
-      </section>
+    <!-- default product form -->
+    <section class="add-to-cart-default__container"></section>
 
     <main>
       <!-- #producs-type selection-->
@@ -108,7 +112,7 @@
           <h2 class="product-range__title">Our Product Range</h2>
 
           <div class="product-range__card">
-            <div class="product-range__card-cake">
+            <div class="product-range__card-cake product-range__card-cake-active" data-product="cake">
               <h4>5 Flavors</h4>
               <p class="card-cake__description">60+ Designs</p>
               <div class="card-cake">
@@ -119,7 +123,7 @@
               </div>
             </div>
 
-            <div class="product-range__card-cake">
+            <div class="product-range__card-cake" data-product="cupcake">
               <h4>5 Flavors</h4>
               <p class="card-cake__description">40+ Designs</p>
               <div class="card-cake">
@@ -130,7 +134,7 @@
               </div>
             </div>
 
-            <div class="product-range__card-cake">
+            <div class="product-range__card-cake " data-product="cookies">
               <h4>5 Flavors</h4>
               <p class="card-cake__description">100+ Designs</p>
               <div class="card-cake">
@@ -141,7 +145,7 @@
               </div>
             </div>
 
-            <div class="product-range__card-cake">
+            <div class="product-range__card-cake" data-product="doughnut">
               <h4>5 Flavors</h4>
               <p class="card-cake__description">10+ Designs</p>
               <div class="card-cake">
@@ -159,14 +163,28 @@
 
       <section class="Products-category">
         <div class="products__categgory-container container">
-          <a href="" class="category__btn">All Occasions</a
-          ><a href="" class="category__btn">Birthday</a
-          ><a href="" class="category__btn">Mother's Day</a
-          ><a href="" class="category__btn">Father's Day</a
-          ><a href="" class="category__btn">Valentine's Day</a
-          ><a href="" class="category__btn">Anniversary</a
-          ><a href="" class="category__btn">Teacher's Day</a
-          ><a href="" class="category__btn">Gender reveal</a>
+          <a href="" class="category__btn category__btn-active" data-category="all-occasions"
+            >All Occasions</a
+          >
+          <a href="" class="category__btn " data-category="birthday">Birthday</a>
+          <a href="" class="category__btn" data-category="mothers-day"
+            >Mother's Day</a
+          >
+          <a href="" class="category__btn" data-category="fathers-day"
+            >Father's Day</a
+          >
+          <a href="" class="category__btn" data-category="valentines-day"
+            >Valentine's Day</a
+          >
+          <a href="" class="category__btn" data-category="anniversary"
+            >Anniversary</a
+          >
+          <a href="" class="category__btn" data-category="teachers-day"
+            >Teacher's Day</a
+          >
+          <a href="" class="category__btn" data-category="gender-reveal"
+            >Gender Reveal</a
+          >
         </div>
       </section>
 
