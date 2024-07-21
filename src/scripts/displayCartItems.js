@@ -48,28 +48,65 @@ export function generateCartHTML(cart) {
   document.querySelector(".order__table").innerHTML = cartProductHTML;
 
   updatesubtotalBaseonQuantity(cart);
+  updateCartSummary(cart);  // Call to update cart summary 
 }
+
 
 function updatesubtotalBaseonQuantity(cart) {
-  document.querySelectorAll(".order-quantity").forEach((input) => {
-    input.addEventListener("change", (event) => {
-      const productId = event.target.dataset.productId;
-      const product = cart.find((p) => p.productId == productId); // Ensure correct property name is used
-      if (product) {
-        const newQuantity = parseInt(event.target.value, 10);
-        if (newQuantity >= 1 && newQuantity <= 10) {
-          const newSubtotal = newQuantity * product.price; // Ensure product.price is used correctly
-          document.querySelector(
-            `.order__total[data-product-id="${productId}"]`
-          ).textContent = `P ${newSubtotal.toFixed(2)}`;
-          product.quantity = newQuantity;
-          product.subtotal = newSubtotal;
-
-          localStorage.setItem("cart", JSON.stringify(cart));
-        } else {
-          event.target.value = product.quantity; // Reset to previous valid quantity if out of bounds
+    document.querySelectorAll(".order-quantity").forEach((input) => {
+      input.addEventListener("change", (event) => {
+        const productId = event.target.dataset.productId;
+        const product = cart.find((p) => p.productId == productId);
+        if (product) {
+          const newQuantity = parseInt(event.target.value, 10);
+          if (newQuantity >= 1 && newQuantity <= 10) {
+            const newSubtotal = newQuantity * product.price;
+            document.querySelector(
+              `.order__total[data-product-id="${productId}"]`
+            ).textContent = `P ${newSubtotal.toFixed(2)}`;
+            product.quantity = newQuantity;
+            product.subtotal = newSubtotal;
+  
+            localStorage.setItem("cart", JSON.stringify(cart));
+  
+            // Update the order summary to reflect the new subtotal
+            updateOrderSummary(cart);
+          } else {
+            event.target.value = product.quantity; // Reset to previous valid quantity if out of bounds
+          }
         }
-      }
+      });
     });
+  }
+  
+  function updateOrderSummary(cart) {
+    let subtotal = 0;
+    let deliveryFee = 0;
+    let total = 0;
+  
+    // Calculate subtotal
+    cart.forEach((item) => {
+      subtotal += item.subtotal;
+    });
+  
+    // Get the delivery fee from the selected delivery option
+    deliveryFee = parseInt(document.getElementById('delivery__options').value, 10);
+  
+    // Calculate the total
+    total = subtotal + deliveryFee;
+  
+    // Update the Subtotal, Delivery Fee, and Total in the order summary
+    document.querySelector('.order__summary-subTotal').textContent = `P ${subtotal.toFixed(2)}`;
+    document.querySelector('.order__summary-deliveryFee').textContent = `P ${deliveryFee.toFixed(2)}`;
+    document.querySelector('.order__summary-total').textContent = `P ${total.toFixed(2)}`;
+  }
+  
+  // Add event listener to the delivery options select element
+  document.getElementById('delivery__options').addEventListener('change', () => {
+    updateOrderSummary(cart);
   });
-}
+  
+  // Call updateOrderSummary on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    updateOrderSummary(cart);
+  });
