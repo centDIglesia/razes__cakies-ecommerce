@@ -4,6 +4,8 @@
 import LZString from 'lz-string';
 const apiUrl = 'https://localhost:7078/api/Product';
 
+let cart = [];
+
 //para automatic na macalculate yung subtotal
 function calculateAndUpdateSubtotal() {
   const basePrice = parseFloat(
@@ -108,12 +110,19 @@ export async function displayAllProducts() {
 /* CART */
 // initialize cart, get the cart from local storage
 // return empty array if no items in the cart
-let cart = getCartFromLocalStorage() || [];
+async function initializeCart() {
+  const storedCart = await getCartFromLocalStorage();
+  if (storedCart) {
+    cart = storedCart;
+  }
+}
+
+initializeCart();
 
 // add cart to local storage, compress the data
-function saveCartToLocalStorage(cart) {
+async function saveCartToLocalStorage(cart) {
   try {
-    const compressedCart = LZString.compress(JSON.stringify(cart));
+    const compressedCart = await LZString.compress(JSON.stringify(cart));
     localStorage.setItem('cart', compressedCart);
   } catch (e) {
     if (e.name === 'QuotaExceededError') {
@@ -124,10 +133,10 @@ function saveCartToLocalStorage(cart) {
   }
 }
 
-function getCartFromLocalStorage() {
+async function getCartFromLocalStorage() {
   const compressedCart = localStorage.getItem('cart');
   if (compressedCart) {
-    return JSON.parse(LZString.decompress(compressedCart));
+    return await JSON.parse(LZString.decompress(compressedCart));
   }
   return null;
 }
