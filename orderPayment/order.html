@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=poppins@100,101,200,201,300,301,400,401,500,501,600,601,700,701,800,801,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>e-commerce</title>
+  </head>
+  <body>
+    <!--nav-->
+    <header>
+      <div class="header container">
+        <img src="/images/main__logo.png" class="main__logo" alt="" />
+        <nav>
+          <ul class="header__menu">
+            <li><a class="header_link current__page" href="#Home">Home</a></li>
+            <li><a class="header_link" href="aboutUs.html">About us</a></li>
+            <li>
+              <a class="header_link" href="/productPage/productpage.html"
+                >Products</a
+              >
+            </li>
+            <li><a class="header_link" href="contactUs.html">Contacts</a></li>
+          </ul>
+        </nav>
+        <div class="header__right">
+          <a href="cartPage/cart.html" class="cart__icon">
+            <i class="cart__icon ri-shopping-basket-2-fill"></i>
+          </a>
+          <div class="line"></div>
+          <div class="login__button">
+            <a href="/loginPage/logInpage.html" class="log__in btn"> Log in </a>
+            <a href="/loginPage/logInpage.html" class="log__out btn"> Log out </a>
+          </div>
+          <a class="header__bars"><i class="ri-menu-fill"></i></a>
+        </div>
+      </div>
+    </header>
+    <!--mobile nav-->
+    <div class="mobile__nav">
+      <nav>
+        <ul class="mobile-nav__menu">
+          <li><a class="mobile-nav__link" href="index.html">Home</a></li>
+          <li>
+            <a class="mobile-nav__link" href="pages/gallery/gallery.html"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="#services__page">Products</a>
+          </li>
+
+          <li>
+            <a class="mobile-nav__link" href="#services__page">Contacts</a>
+          </li>
+          <li class="mobile-nav__line"></li>
+       
+          <li>
+            <a href="cartPage/cart.html" class="cart__icon">
+              <i class="cart__icon ri-shopping-basket-2-fill"></i>
+            </a>
+          </li>
+          <li>
+            
+              <a href="/loginPage/logInpage.html" class="log__in btn"> Log in </a>
+              <a href="/loginPage/logInpage.html" class="log__out btn"> Log out </a>
+         
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!--end mobile nav-->
+    <main>
+      <secrion class="orderPayment">
+        <section class="orderPayment-container container">
+          <div class="cart__link">
+            <a class="cart__nav-link" href="../cartPage/cart.html">Cart</a>/<a
+              href="#"
+              >Order</a
+            >
+          </div>
+          <h1>My Orders</h1>
+          <div class="orderPaymentbox">
+            <div class="orderPayment__Info">
+              <div class="Delivery__Informations-Container">
+                <form action="">
+                  <span class="orderPayment__title">Delivery Informations</span>
+                  <div class="delivery__name">
+                    <div>
+                      <label for="customer__fname">First Name</label>
+                      <input
+                        type="text"
+                        name="customer__name"
+                        id="customer__fname"
+                        placeholder="First Name"
+                      />
+                    </div>
+                    <div>
+                      <label for="customer__fname">Last Name</label>
+                      <input
+                        type="text"
+                        name="customer__name"
+                        id="customer__fname"
+                        placeholder="First Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="customer__email">Email</label>
+                    <input
+                      type="email"
+                      name="customer__email"
+                      id="customer__email"
+                      placeholder="Email"
+                    />
+                  </div>
+
+                  <div class="delivery__name">
+                    <div>
+                      <label for="customer__Region">Region</label>
+                      <select id="regionDropdown" name="province"></select>
+                    </div>
+                    <div>
+                      <label for="customer__Province">Province</label>
+                      <select id="provinceDropdown" name="Province"></select>
+                    </div>
+                  </div>
+
+                  <div class="delivery__name">
+                    <div>
+                      <label for="customer__City">City</label>
+                      <select id="cityDropdown" name="City"></select>
+                    </div>
+
+                    <div>
+                      <label for="customer__Baranggay">Baranggay</label>
+                      <input
+                        type="text"
+                        name="customer__Baranggay"
+                        id="customer__Baranggay"
+                        placeholder="Baranggay"
+                      />
+                    </div>
+                  </div>
+                  <div class="delivery__name">
+                    <div>
+                      <label for="customer__number">House number</label>
+                      <input
+                        type="text"
+                        name="customer__number"
+                        id="customer__house-number"
+                        placeholder="House number"
+                      />
+                    </div>
+
+                    <div>
+                      <label for="customer__number">Phone number</label>
+                      <input
+                        type="text"
+                        name="customer__number"
+                        id="customer__number"
+                        placeholder="Phone number"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="other__address">Additional Info.</label>
+                    <textarea
+                      name="other__address"
+                      id="other__address"
+                      class="customer__Additional-info"
+                      placeholder="Additional"
+                    ></textarea>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="orderPayment__payment-totals">
+              <span class="orderPayment__title">Total payment</span>
+              <table class="cart_total">
+                <tr>
+                  <td>Sub-total</td>
+                  <td>P <span class="payment__subtotal">38</span></td>
+                </tr>
+                <tr>
+                  <td>Delivery Fee</td>
+                  <td>P <span class="payment__delivery-fee">38</span></td>
+                </tr>
+               
+
+                <tr>
+                  <td>
+                    Payment
+                  </td>
+                
+                  <td>
+                   
+                    <div class="radio-buttons">
+                      <input
+                        type="radio"
+                        id="option1"
+                        name="deliveryOption"
+                        value="40"
+                      />
+                      <label
+                        for="option1"
+                        class="radio-label"
+                        style="background-image: url('../public/images/icons/COD.svg')"
+                      ></label>
+
+                      <input
+                        type="radio"
+                        id="option2"
+                        name="deliveryOption"
+                        value="0"
+                      />
+                      <label
+                        for="option2"
+                        class="radio-label"
+                        style="background-image: url('../public/images/icons/GCASH.png')"
+                      ></label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="Total__row">Total</td>
+                  <td class="Total__row">
+                    P <span class="payment__delivery-total">38</span>
+                  </td>
+                </tr>
+                
+              </table>
+              <a href="" class="proceed__payemnt-btn btn"
+              >Check out</a
+            >
+            </div>
+          </div>
+        </section>
+      </secrion>
+    </main>
+    <!-- footer-->
+    <footer class="footer">
+      <div class="footer__conatiner container">
+        <div class="footer__CTA">
+          <h2>Cakies for Everyjuan!</h2>
+          <p>Follow us on our socia meadia pages for more exclusive updates!</p>
+
+          <div class="social__media">
+            <a href=""> <i class="ri-facebook-box-fill"></i></a>
+            <a href=""> <i class="ri-twitter-fill"></i></a>
+            <a href=""> <i class="ri-instagram-fill"></i></a>
+          </div>
+
+          <span>© 2024, Raze’s Cakes</span>
+        </div>
+
+        <div class="footer__links">
+          <h2>Quick Links</h2>
+
+          <ul class="other__links">
+            <li class="links"><a href="FAQs.html">FAQ Ganern!</a></li>
+            <li class="links">
+              <a href="termsAndConditions.html">Terms & Conditions</a>
+            </li>
+            <li class="links">
+              <a href="shippingPolicy.html">Shipping Policy</a>
+            </li>
+            <li class="links"><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="oorder-js.js"></script>
+  </body>
+</html>

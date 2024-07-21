@@ -17,7 +17,6 @@
   display: none;
 }
 
-
 .header__bars {
   color: var(--clr-maincolor);
   font-size: var(--size-2xl);
@@ -47,6 +46,7 @@
   .line {
     display: none;
   }
+
 }
 
 /* sm */
@@ -54,6 +54,8 @@
   .main__logo {
     width: var(--size-7xl);
   }
+
+  
 }
 
 /* md */
@@ -105,6 +107,8 @@
   .header_link {
     font-size: var(--size-sm);
   }
+
+ 
 }
 
 /* xl */

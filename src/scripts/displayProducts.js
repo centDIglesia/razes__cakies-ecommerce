@@ -27,7 +27,6 @@ function calculateAndUpdateSubtotal() {
   ).textContent = `₱ ${subtotal.toFixed(2)}`;
 }
 
-
 function calculateAndUpdateSubtotalForDefaultForm() {
   const quantityInput = document.getElementById("quantity");
   const priceDisplay = document.querySelector(".product__form-price");
@@ -44,7 +43,6 @@ function calculateAndUpdateSubtotalForDefaultForm() {
   subtotalDisplay.textContent = `₱ ${subtotal.toFixed(2)}`;
 }
 
-
 //function for updating the cake setting and decoration additional price
 
 export function updatePrice(elementId, priceClass) {
@@ -56,7 +54,6 @@ export function updatePrice(elementId, priceClass) {
   // Recalculate the subtotal after the price update
   calculateAndUpdateSubtotal();
 }
-
 
 export async function displayAllProducts() {
   let allProductHTML = "";
@@ -102,8 +99,8 @@ export async function displayAllProducts() {
   }
 
   document.querySelector(".products__list-grid").innerHTML = allProductHTML;
-  showCustomizeForm(allProducts); 
-  showDefaultForm(allProducts);// Pass the fetched products to the showaddtoCartForm function
+  showCustomizeForm(allProducts);
+  showDefaultForm(allProducts); // Pass the fetched products to the showaddtoCartForm function
 }
 
 export function showCustomizeForm(allProducts) {
@@ -313,15 +310,12 @@ export function showCustomizeForm(allProducts) {
           .querySelectorAll(".form__Add-to-cartbutton")
           .forEach((button) => {
             button.addEventListener("click", () => {
+              event.preventDefault();
 
-              event.preventDefault(); 
-
-
-             
               const CustomizeformData = {
                 ProductType: product.type,
                 ProductOccasion: product.occasion,
-                productnName : product.productName,
+                productname: product.productName,
                 productImageSrc: product.image,
                 referenceImage: document.getElementById("ref-image").src,
                 dedication: product.description,
@@ -333,14 +327,27 @@ export function showCustomizeForm(allProducts) {
                 colorPalette: document.getElementById("setting-color").value,
                 theme: document.getElementById("setting-theme").value,
                 quantity: document.getElementById("quantity").value,
-                subtotal: parseFloat(document.getElementById("sub-total-amount").textContent.replace("₱ ", "")),
-                productId: button.dataset.productId 
+                subtotal: parseFloat(
+                  document
+                    .getElementById("sub-total-amount")
+                    .textContent.replace("₱ ", "")
+                ),
+                price: product.price,  // Ensure this line is present
+                productId: button.dataset.productId,
               };
-          
-             cart.push(CustomizeformData);     
 
-             console.log(cart);
+              // Check if the cart is already in local storage
+              cart.push(CustomizeformData);
 
+              // Save the updated cart to local storage
+              localStorage.setItem("cart", JSON.stringify(cart));
+
+              console.log("Updated cart:", cart);
+              refreshProductDisplay();
+
+              addToCartForm.style.display = "none";
+              document.body.style.overflow = "auto";
+            
             });
           });
 
@@ -377,31 +384,33 @@ export function showCustomizeForm(allProducts) {
   });
 }
 
+export function refreshProductDisplay() {
+  displayAllProducts(); // Refresh the product list
 
-
+}
 export function showDefaultForm(allProducts) {
   const defaultBtns = document.querySelectorAll(".default-addtocart-btn");
-  const addToCartForm = document.querySelector(".add-to-cart-default__container");
-
+  const addToCartForm = document.querySelector(
+    ".add-to-cart-default__container"
+  );
 
   defaultBtns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
       event.preventDefault(); // Prevent the default anchor action
-console.log("hi");
+      console.log("hi");
 
-       const productId =parseInt(btn.getAttribute("data-product-id"), 10); // 
-       console.log(productId);
+      const productId = parseInt(btn.getAttribute("data-product-id"), 10); //
+      console.log(productId);
 
-       const product = allProducts?.find(p => p.id === productId);
-       console.log("Found product:", product);
-       if (!product) {
+      const product = allProducts?.find((p) => p.id === productId);
+      console.log("Found product:", product);
+      if (!product) {
         console.error(`No product found with id: ${productId}`);
       }
       if (product) {
-      
         addToCartForm.style.display = "flex"; // Show the form
         document.body.style.overflow = "hidden";
-       
+
         addToCartForm.innerHTML = `
          <form class="add-to-cart__Dform" action="">
           <i class="close-add-to-cart-Dform ri-close-circle-fill"></i>
@@ -475,9 +484,11 @@ console.log("hi");
       `;
 
         //for dispalying reference image
-        
+
         //close the form
-        const closeBtn = addToCartForm.querySelector(".close-add-to-cart-Dform");
+        const closeBtn = addToCartForm.querySelector(
+          ".close-add-to-cart-Dform"
+        );
         if (closeBtn) {
           closeBtn.addEventListener("click", () => {
             addToCartForm.style.display = "none";
@@ -490,15 +501,12 @@ console.log("hi");
           .querySelectorAll(".form__Add-to-cartbutton")
           .forEach((button) => {
             button.addEventListener("click", () => {
+              event.preventDefault();
 
-              event.preventDefault(); 
-
-
-             
               const CustomizeformData = {
                 ProductType: product.type,
                 ProductOccasion: "Default",
-                productnName : product.productName,
+                productname: product.productName,
                 productImageSrc: product.image,
                 referenceImage: "Default",
                 dedication: product.description,
@@ -510,19 +518,34 @@ console.log("hi");
                 colorPalette: "Default",
                 theme: "Default",
                 quantity: document.getElementById("quantity").value,
-                subtotal: parseFloat(document.getElementById("sub-total-amount").textContent.replace("₱ ", "")),
-                productId: button.dataset.productId 
+                subtotal: parseFloat(
+                  document
+                    .getElementById("sub-total-amount")
+                    .textContent.replace("₱ ", "")
+                ),
+                price: product.price,  // Ensure this line is present
+                productId: button.dataset.productId,
               };
-          
-             cart.push(CustomizeformData);     
+              
+                      // Check if the cart is already in local storage
+                      cart.push(CustomizeformData);
 
-             console.log(cart);
+                      // Save the updated cart to local storage
+                      localStorage.setItem("cart", JSON.stringify(cart));
+        
+                      console.log("Updated cart:", cart);
+                      refreshProductDisplay();
+
+                      addToCartForm.style.display = "none";
+                      document.body.style.overflow = "auto";
 
             });
           });
 
-          document.getElementById("quantity").addEventListener("change", updateSubtotal);
- 
+        document
+          .getElementById("quantity")
+          .addEventListener("change", updateSubtotal);
+
         calculateAndUpdateSubtotalForDefaultForm();
       }
     });

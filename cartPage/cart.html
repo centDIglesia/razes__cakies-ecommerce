@@ -8,38 +8,33 @@
       href="https://api.fontshare.com/v2/css?f[]=poppins@100,101,200,201,300,301,400,401,500,501,600,601,700,701,800,801,900&display=swap"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-
     <title>e-commerce</title>
   </head>
   <body>
-    <!--web size navigation var-->
+    <!--nav-->
     <header>
       <div class="header container">
         <img src="/images/main__logo.png" class="main__logo" alt="" />
         <nav>
           <ul class="header__menu">
-            <li><a class="header_link current__page" href="index.html">Home</a></li>
-            <li><a class="header_link current__page" href="aboutUs.html">About us</a></li>
+            <li><a class="header_link current__page" href="#Home">Home</a></li>
+            <li><a class="header_link" href="aboutUs.html">About us</a></li>
             <li>
               <a class="header_link" href="/productPage/productpage.html"
                 >Products</a
@@ -94,42 +89,59 @@
         </ul>
       </nav>
     </div>
-    <!-- Mobile Navigation -->
-
+    <!--mobile nav-->
+  
+    <!--end mobile nav-->
     <main>
-      <section class = "journey container">
-        <div>
-          <h1>About Us</h1>
+      <section class="order-cart">
+        <div class="cart__link"><a href="" class="cart">Cart</a></div>
+        <h1>My Orders</h1>
+
+        <div class="order__container container">
+          <a
+            class="btn trackorder__btn"
+            href="../trackOrderPage/trackOrder.html"
+            >track order</a
+          >
+          <table class="order__table"></table>
+
+          <div class="order__summary-container">
+            <h3 class="cart__summary-title">Cart summary</h3>
+            <table class="table__order-summary">
+              <tr>
+                <td>Subtotal</td>
+                <td class="order__summary-subTotal">P 500</td>
+              </tr>
+              <tr class="order__summary-modeofpayemnet">
+                <td>Delivery Option</td>
+                <td>
+                  <select id="delivery__options" name="delivery-options">
+                    <option value="40">Standard Delivery</option>
+                    <option value="0">Pick up</option>
+                    <option value="38">Cash on Delivery</option>
+                    <option value="20">Meet up</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Delivery Fee</td>
+                <td class="order__summary-deliveryFee">P 500</td>
+              </tr>
+              <tr>
+                <td class="order__summary-totalv">Total</td>
+                <td class="order__summary-total">P 500</td>
+              </tr>
+            </table>
+            <div class="order__summary-buttons">
+              <a href="../orderPayment/order.html" class="btn"
+                >Proceed to Payment</a
+              >
+            </div>
+          </div>
         </div>
-        <div class = "paragraph-one container">
-          Balancing the demands of school, social life, and business was a daunting challenge for 
-          Jannah Glaze Pangilinan. It all started with a heartfelt gesture-she wanted to give her 
-          mom a special birthday gift but she had no money to afford one. Instead, she decided to 
-          bake a cake. As she mixed the ingredients and crafted something from scratch, she fell in 
-          love with the process.
-        </div>
-        <div class = "paragraph-two container">
-          Later, when Jannah was tasked with a final project that required baking cakes and pastries, 
-          she saw it as a chance to dive deeper into this newfound passion. She shared her creations 
-          with her relatives and her boyfriend, and their praise fed all her hardwork and dedication 
-          in perfecting her craft. They suggested she start selling her cakes, believing in her talent 
-          even when she doubted herself.
-        </div>
-        <div class = "paragraph-three container">
-          The journey was far from easy. Jannah had spent countless hours in the kitchen, 
-          testing recipes and wasting ingredients in order to achieve perfection. Her 
-          boyfriend and relatives became her unofficial taste tester, providing valuable 
-          feedback that guided her efforts. 
-        </div>
-        <div class = "paragraph-four container">
-        Finally, with tons of  trial and error, Jannah perfected her recipes. The approval 
-        from everyone around her marked the beginning of something new. Jannah had turned 
-        her passion into a reality, fueled by perseverance and the support of those
-        she loves the most.
-        <div>
       </section>
     </main>
-
+    <!-- footer-->
     <footer class="footer">
       <div class="footer__conatiner container">
         <div class="footer__CTA">
@@ -150,15 +162,18 @@
 
           <ul class="other__links">
             <li class="links"><a href="FAQs.html">FAQ Ganern!</a></li>
-            <li class="links"><a href="termsAndConditions.html">Terms & Conditions</a></li>
-            <li class="links"><a href="shippingPolicy.html">Shipping Policy</a></li>
+            <li class="links">
+              <a href="termsAndConditions.html">Terms & Conditions</a>
+            </li>
+            <li class="links">
+              <a href="shippingPolicy.html">Shipping Policy</a>
+            </li>
             <li class="links"><a href="contactUs.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
     </footer>
 
-
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="cart-js.js"></script>
   </body>
 </html>

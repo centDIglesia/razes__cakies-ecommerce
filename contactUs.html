@@ -36,40 +36,90 @@
     <header>
       <div class="header container">
         <img src="/images/main__logo.png" class="main__logo" alt="" />
-
         <nav>
           <ul class="header__menu">
-            <li><a class="header_link" href="index.html">Home</a></li>
+            <li><a class="header_link current__page" href="#Home">Home</a></li>
             <li><a class="header_link" href="aboutUs.html">About us</a></li>
-            <li><a class="header_link" href="productPage/productpage.html">Products</a></li>
+            <li>
+              <a class="header_link" href="/productPage/productpage.html"
+                >Products</a
+              >
+            </li>
             <li><a class="header_link" href="contactUs.html">Contacts</a></li>
           </ul>
         </nav>
-
         <div class="header__right">
-          <a href="#" class="cart__icon">
-            <i class="ri-shopping-basket-fill"></i>
+          <a href="cartPage/cart.html" class="cart__icon">
+            <i class="cart__icon ri-shopping-basket-2-fill"></i>
           </a>
-
-          <div class="header__line"></div>
-
+          <div class="line"></div>
           <div class="login__button">
-            <a href="/logInpage.html" class="btn"> Log in </a>
+            <a href="/loginPage/logInpage.html" class="log__in btn"> Log in </a>
+            <a href="/loginPage/logInpage.html" class="log__out btn"> Log out </a>
           </div>
-
-          <a class="header__bars">
-            <i class="ri-menu-fill"></i>
-          </a>
+          <a class="header__bars"><i class="ri-menu-fill"></i></a>
         </div>
       </div>
     </header>
+    <!--mobile nav-->
+    <div class="mobile__nav">
+      <nav>
+        <ul class="mobile-nav__menu">
+          <li><a class="mobile-nav__link" href="index.html">Home</a></li>
+          <li>
+            <a class="mobile-nav__link" href="pages/gallery/gallery.html"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="#services__page">Products</a>
+          </li>
 
+          <li>
+            <a class="mobile-nav__link" href="#services__page">Contacts</a>
+          </li>
+          <li class="mobile-nav__line"></li>
+       
+          <li>
+            <a href="cartPage/cart.html" class="cart__icon">
+              <i class="cart__icon ri-shopping-basket-2-fill"></i>
+            </a>
+          </li>
+          <li>
+            
+              <a href="/loginPage/logInpage.html" class="log__in btn"> Log in </a>
+              <a href="/loginPage/logInpage.html" class="log__out btn"> Log out </a>
+         
+          </li>
+        </ul>
+      </nav>
+    </div>
     <!-- Mobile Navigation -->
 
     <main>
       <section>
-        <div>Contact Us</div>
-      </section>
+        <div class="LogIn__page container">
+            <img src="public/images/logIn__sideImage.png" class="login__image">
+            <div class="form">
+                <h1 class="login__title">Let us know!</h1>
+                <p class="login__sub-title">Your feedback matters to us.</p>
+                <form>
+                    <div class="field">
+                        <input type="text" placeholder="Enter your Full Name" class="contact__input" id="fnContactUs"/>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Enter your Email" class="contact__input" id="emailContactUs"/>
+                    </div>
+                    <div class="field">
+                        <textarea type="text" placeholder="Enter your Message" class="contact__input" id="messageContactUs"></textarea>
+                    </div>
+                    <div class="button__field">
+                        <button type="submit" class="btn" id = "submit btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
     </main>
 
     <footer class="footer">
@@ -91,10 +141,10 @@
           <h2>Quick Links</h2>
 
           <ul class="other__links">
-            <li class="links"><a href="">FAQ Ganern!</a></li>
-            <li class="links"><a href="">Terms & Conditions</a></li>
-            <li class="links"><a href="">Shipping Policy</a></li>
-            <li class="links"><a href="">Contact Us</a></li>
+            <li class="links"><a href="FAQs.html">FAQ Ganern!</a></li>
+            <li class="links"><a href="termsAndConditions.html">Terms & Conditions</a></li>
+            <li class="links"><a href="shippingPolicy.html">Shipping Policy</a></li>
+            <li class="links"><a href="contactUs.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
