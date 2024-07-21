@@ -139,3 +139,33 @@ td:last-child {
   color: var(--clr-maincolor);
   font-weight: 600;
 }
+
+.radio-buttons {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.radio-label {
+  display: block;
+  width: 70px; 
+  height: 70px; /* Adjust size as needed */
+  background-size: cover;
+  background-position: center;
+
+  cursor: pointer;
+  transition: border-color 0.3s;
+  border: 2px solid white;
+}
+
+input[type="radio"]:checked + .radio-label {
+  border-color: #007bff; 
+
+  border-radius: .5em;
+}
