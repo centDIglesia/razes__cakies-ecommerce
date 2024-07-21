@@ -201,7 +201,7 @@
   text-align: center;
 }
 
-/*adtocart form*/
+/* customize adtocart form*/
 #input__reference {
   display: none;
 }
@@ -433,7 +433,10 @@
   right: 1em;
   color: var(--clr-maincolor);
   font-size: var(--size-2xl);
+  z-index: 9999;
 }
+
+
 .product__display-image {
   position: relative;
 }
@@ -455,4 +458,99 @@
 
 .star {
   color: rgb(255, 200, 0);
+}
+
+
+/* default add-to-cart form */
+
+.add-to-cart-default__container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--clr-maincolorRGBA);
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#input__reference {
+  display: none;
+}
+
+
+.add-to-cart__Dform {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.285);
+
+  background-color: #ffffff;
+  padding: 1.5em;
+  width: 25em;
+  position: relative;
+  border-radius: 0.5em;
+}
+
+.add-to-cart-left__Dform {
+  display: flex;
+  flex-direction: column;
+  gap:.7em;
+  width:100%;
+}
+
+.add-to-cart__DformImg {
+  width: 100%;
+  border-radius: 0.5em;
+  height: auto;
+}
+
+.produts__Dform-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.produts__form-info-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.product__form-description {
+  color: var(--clr-maincolor);
+  margin: 1em 0 1em 1em;
+  font-size: var(--size-xs);
+  line-height: 1.5em;
+}
+
+.Ddedication__input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.6em;
+  color: var(--clr-lightmaincolor);
+  font-size: var(--size-xs);
+}
+
+.DNote,
+.DDedication {
+  resize: none;
+  font-size: var(--size-xs);
+  outline: none;
+  border: 1px solid var(--clr-maincolor);
+  border-radius: 4px;
+  color: var(--clr-maincolor);
+  height: 3em;
+  padding: 0.5em;
+  color: var(--clr-maincolor);
+}
+
+
+.close-add-to-cart-Dform {
+  position: absolute;
+  top: .3em;
+  right: .3em;
+  color: var(--clr-maincolor);
+  font-size: var(--size-2xl);
+  z-index: 9999;
 }

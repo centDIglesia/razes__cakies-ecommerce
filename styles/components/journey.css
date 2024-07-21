@@ -1,0 +1,18 @@
+.journey
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 5%;
+  color: var(--clr-maincolor);
+}
+
+.paragraph-one,
+.paragraph-two,
+.paragraph-three,
+.paragraph-four
+{
+  width: 50%;
+}
