@@ -1,6 +1,6 @@
-import { allproducts } from "../Data/all-Products";
+// import { allproducts } from "../Data/all-Products";
 import { cart } from "../Data/cart";
-//const apiUrl = 'https://localhost:7078/api/Product';
+const apiUrl = 'https://localhost:7078/api/Product';
 
 //para automatic na macalculate yung subtotal
 function calculateAndUpdateSubtotal() {
@@ -60,23 +60,25 @@ export function updatePrice(elementId, priceClass) {
 
 export async function displayAllProducts() {
   let allProductHTML = "";
-  let allProducts = allproducts;
+  let allProducts = [];
   try {
-    // const res = await fetch(apiUrl);
+    const res = await fetch(apiUrl);
 
-    // if (!res.ok) {
-    //   console.log("Error in getting products.");
-    //   return;
-    // }
+    if (!res.ok) {
+      console.log("Error in getting products.");
+      return;
+    }
 
-    // const data = await res.json();
-    // allProducts = data;
+    const data = await res.json();
+    allProducts = data;
 
     // Assuming 'allproducts' is an array of product objects
+    // comment mo na lang img tas gawa ka na lang bagong img may pang convert kasi yang img e naka base64 format
+    // data:image/jpeg;base64,
     allProducts.forEach((product) => {
       allProductHTML += `
       <div class="product__card">
-        <img src="${product.image}" alt="${product.id}" />
+        <img src="data:image/jpeg;base64,${product.image}" alt="${product.id}" />
         <div class="product-card__description">
           <h3 class="product__name">${product.productName}</h3>
           <span class="product__price">$ ${product.price}</span>
@@ -121,13 +123,14 @@ export function showCustomizeForm(allProducts) {
         addToCartForm.style.display = "flex"; // Show the form
         document.body.style.overflow = "hidden";
 
+        // pati yung img ditoo
         addToCartForm.innerHTML = `
      <form class="add-to-cart__form" action="">
           <i class="close-add-to-cart-form ri-close-circle-fill"></i>
           <div class="add-to-cart-left__form">
             <div class="product__display-image">
               <img
-                src="${product.image}"
+                src="data:image/jpeg;base64,${product.image}"
                 class="add-to-cart__formImg"
                 alt=""
               />
@@ -315,8 +318,6 @@ export function showCustomizeForm(allProducts) {
             button.addEventListener("click", () => {
 
               event.preventDefault(); 
-
-
              
               const CustomizeformData = {
                 ProductType: product.type,
@@ -377,8 +378,6 @@ export function showCustomizeForm(allProducts) {
   });
 }
 
-
-
 export function showDefaultForm(allProducts) {
   const defaultBtns = document.querySelectorAll(".default-addtocart-btn");
   const addToCartForm = document.querySelector(".add-to-cart-default__container");
@@ -387,7 +386,7 @@ export function showDefaultForm(allProducts) {
   defaultBtns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
       event.preventDefault(); // Prevent the default anchor action
-console.log("hi");
+      // console.log("hi");
 
        const productId =parseInt(btn.getAttribute("data-product-id"), 10); // 
        console.log(productId);
@@ -408,7 +407,7 @@ console.log("hi");
           <div class="add-to-cart-left__Dform">
             <div class="product__display-image">
               <img
-                src="${product.image}"
+                src="data:image/jpeg;base64,${product.image}"
                 class="add-to-cart__DformImg"
                 alt=""
               />
