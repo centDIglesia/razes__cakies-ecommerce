@@ -45,6 +45,10 @@ body {
 
 }
 
+.log__out{
+  display: none !important;
+}
+
 img,
 picture,
 video,
