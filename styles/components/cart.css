@@ -115,7 +115,7 @@ th {
 
 .table__order-summary td {
   padding: 0.7em;
-  color: var(--clr-lightermaincolor);
+  color: var(--clr-lightmaincolor);
 }
 
 td:last-child {
@@ -156,7 +156,7 @@ th:last-child {
 
 .order__summary-total {
   border-top: 1px solid var(--clr-lightermaincolor);
-  color: var(--clr-maincolor);
+  color: var(--clr-maincolor)!important;
   font-weight: 700;
 }
 
@@ -172,7 +172,7 @@ th:last-child {
   justify-content: flex-end;
 }
 
-.order__summary-deliveryFee select {
+#delivery__options {
   padding: 0.3em;
   border-radius: 0.3em;
   color: var(--clr-maincolor);
