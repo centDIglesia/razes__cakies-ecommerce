@@ -21,3 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
       generateCartHTML(cart);
     }
   });
+
+
+  

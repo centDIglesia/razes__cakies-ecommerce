@@ -524,11 +524,14 @@ export function showDefaultForm(allProducts) {
                 productId: button.dataset.productId,
               };
               
-              cart.push(CustomizeformData);
+                      // Check if the cart is already in local storage
+                      cart.push(CustomizeformData);
 
-              console.log(cart);
-
-              refreshProductDisplay();
+                      // Save the updated cart to local storage
+                      localStorage.setItem("cart", JSON.stringify(cart));
+        
+                      console.log("Updated cart:", cart);
+                      refreshProductDisplay();
             });
           });
 
