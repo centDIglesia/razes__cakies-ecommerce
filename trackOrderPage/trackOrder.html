@@ -33,7 +33,9 @@
         <img src="/images/main__logo.png" class="main__logo" alt="" />
         <nav>
           <ul class="header__menu">
-            <li><a class="header_link current__page" href="../index.html">Home</a></li>
+            <li>
+              <a class="header_link current__page" href="../index.html">Home</a>
+            </li>
             <li><a class="header_link" href="aboutUs.html">About us</a></li>
             <li>
               <a class="header_link" href="/productPage/productpage.html"
@@ -50,7 +52,9 @@
           <div class="line"></div>
           <div class="login__button">
             <a href="/loginPage/logInpage.html" class="log__in btn"> Log in </a>
-            <a href="/loginPage/logInpage.html" class="log__out btn"> Log out </a>
+            <a href="/loginPage/logInpage.html" class="log__out btn">
+              Log out
+            </a>
           </div>
           <a class="header__bars"><i class="ri-menu-fill"></i></a>
         </div>
@@ -60,48 +64,13 @@
     <div class="mobile_nav"></div>
     <!--end mobile nav-->
     <main>
-      <section class="order-cart">
+      <section class="track-order">
+        <div class="track__order-container container">
+            <div class="cart__link"><a class="cart__nav-link" href="../cartPage/cart.html">Cart</a>/<a href="#">Order</a></div>
+          <h1>Track your Order</h1>
 
-        <div class="cart__link"><a href="" class="cart">Cart</a></div>
-        <h1>My Orders</h1>
-        <h3><a href=""></a>track</h3>
-        <div class="order__container container">
-          <table class="order__table">
-          
+            table.order
 
-          
-          </table>
-
-          <div class="order__summary-container">
-          <h3 class="cart__summary-title">Cart summary</h3>
-            <table class="table__order-summary">
-              <tr >
-                <td >Subtotal</td>
-                <td  class="order__summary-subTotal">P 500</td>
-
-              </tr>
-              <tr class="order__summary-modeofpayemnet">
-                <td >Delivery Option</td>
-                <td>  <select id="delivery__options" name="delivery-options">
-                  <option value="40">Standard Delivery</option>
-                  <option value="0">Pick up</option>
-                  <option value="38">Cash on Delivery</option>
-                  <option value="20">Meet up</option>
-              </select></td>
-              </tr>
-              <tr>
-                <td >Delivery Fee</td>
-                <td class="order__summary-deliveryFee" >P 500</td>
-              </tr>
-              <tr >
-                <td class="order__summary-total">Total</td>
-                <td class="order__summary-total">P 500</td>
-              </tr>
-            </table>
-            <div  class="order__summary-buttons"  >
-              <a href="../orderPayment/order.html" class="btn">Checkout</a>
-            </div>
-          </div>
         </div>
       </section>
     </main>

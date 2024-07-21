@@ -48,9 +48,7 @@ export function generateCartHTML(cart) {
   document.querySelector(".order__table").innerHTML = cartProductHTML;
 
   updatesubtotalBaseonQuantity(cart);
-  updateCartSummary(cart);
-
-  // Call to update cart summary
+ 
 }
 
 function updatesubtotalBaseonQuantity(cart) {
