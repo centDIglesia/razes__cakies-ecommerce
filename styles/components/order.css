@@ -74,7 +74,7 @@
 }
 
 .cart_total {
-  width: 25em;
+  width: 20em;
   border-collapse: collapse;
   text-align: left;
 }
@@ -121,4 +121,21 @@ td:last-child {
   color: var(--clr-lightmaincolor);
   font-size: var(--size-xs);
   font-weight: 500;
+}
+
+
+
+.Delivery__Informations-Container form input::placeholder,
+.delivery__name select::placeholder{
+  color: var(--clr-lightmaincolor);
+}
+
+.customer__Additional-info::placeholder
+{
+  color: var(--clr-lightmaincolor);
+}
+
+.cart__nav-link:hover{
+  color: var(--clr-maincolor);
+  font-weight: 600;
 }
