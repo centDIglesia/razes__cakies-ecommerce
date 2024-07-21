@@ -64,12 +64,34 @@
     <div class="mobile_nav"></div>
     <!--end mobile nav-->
     <main>
-      <section class="track-order">
-        <div class="track__order-container container">
-            <div class="cart__link"><a class="cart__nav-link" href="../cartPage/cart.html">Cart</a>/<a href="#">Order</a></div>
+      <section class="track-order container">
+        <div class="track__order-container">
+            <div class="cart__link"><a class="cart__nav-link" href="../cartPage/cart.html">Cart</a>/<a href="#">Track Order</a></div>
           <h1>Track your Order</h1>
 
-            table.order
+            <table class="order__tacking-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Status</t>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <img src="/public/images/All-Products/aniversary1.png" alt="" class="order__track-img">
+                      
+                            <p class=" order__tracking-name">Cakeies ng lahat<p>   
+                        </div>
+                                                          
+                    </td>
+                    <td><span class="order__trackingquantioty">2</span>x</td>
+                    <td>P<span class="order__tracking-amount">250</span></td>
+                    <td>
+                        <i class="dot ri-circle-fill"></i> <span class="order__tracking-status">Out of delivery</span>
+                    </td>
+                </tr>
+            </table>
 
         </div>
       </section>
@@ -107,6 +129,6 @@
       </div>
     </footer>
 
-    <script type="module" src="cart-js.js"></script>
+    <script type="module" src="track-order-js.js"></script>
   </body>
 </html>
