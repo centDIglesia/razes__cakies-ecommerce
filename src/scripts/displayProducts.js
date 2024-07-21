@@ -1,5 +1,8 @@
 // import { allproducts } from "../Data/all-Products";
-import { cart } from "../Data/cart";
+// import { cart } from "../Data/cart";
+
+// API
+import LZString from 'lz-string';
 const apiUrl = 'https://localhost:7078/api/Product';
 
 //para automatic na macalculate yung subtotal
@@ -44,9 +47,7 @@ function calculateAndUpdateSubtotalForDefaultForm() {
   subtotalDisplay.textContent = `₱ ${subtotal.toFixed(2)}`;
 }
 
-
 //function for updating the cake setting and decoration additional price
-
 export function updatePrice(elementId, priceClass) {
   var selectedElement = document.getElementById(elementId);
   var priceDisplay = document.querySelector(priceClass);
@@ -56,7 +57,6 @@ export function updatePrice(elementId, priceClass) {
   // Recalculate the subtotal after the price update
   calculateAndUpdateSubtotal();
 }
-
 
 export async function displayAllProducts() {
   let allProductHTML = "";
@@ -73,7 +73,6 @@ export async function displayAllProducts() {
     allProducts = data;
 
     // Assuming 'allproducts' is an array of product objects
-    // comment mo na lang img tas gawa ka na lang bagong img may pang convert kasi yang img e naka base64 format
     // data:image/jpeg;base64,
     allProducts.forEach((product) => {
       allProductHTML += `
@@ -104,8 +103,33 @@ export async function displayAllProducts() {
   }
 
   document.querySelector(".products__list-grid").innerHTML = allProductHTML;
-  showCustomizeForm(allProducts); 
+  showCustomizeForm(allProducts);
   showDefaultForm(allProducts);// Pass the fetched products to the showaddtoCartForm function
+}
+
+// initialize cart
+let cart = getCartFromLocalStorage() || [];
+
+// add cart to local storage
+function saveCartToLocalStorage(cart) {
+  try {
+    const compressedCart = LZString.compress(JSON.stringify(cart));
+    localStorage.setItem('cart', compressedCart);
+  } catch (e) {
+    if (e.name === 'QuotaExceededError') {
+      console.error('LocalStorage quota exceeded.');
+    } else {
+      console.error('Error saving cart to localStorage', e);
+    }
+  }
+}
+
+function getCartFromLocalStorage() {
+  const compressedCart = localStorage.getItem('cart');
+  if (compressedCart) {
+    return JSON.parse(LZString.decompress(compressedCart));
+  }
+  return null;
 }
 
 export function showCustomizeForm(allProducts) {
@@ -317,12 +341,12 @@ export function showCustomizeForm(allProducts) {
           .forEach((button) => {
             button.addEventListener("click", () => {
 
-              event.preventDefault(); 
-             
+              event.preventDefault();
+
               const CustomizeformData = {
                 ProductType: product.type,
                 ProductOccasion: product.occasion,
-                productnName : product.productName,
+                productnName: product.productName,
                 productImageSrc: product.image,
                 referenceImage: document.getElementById("ref-image").src,
                 dedication: product.description,
@@ -335,13 +359,13 @@ export function showCustomizeForm(allProducts) {
                 theme: document.getElementById("setting-theme").value,
                 quantity: document.getElementById("quantity").value,
                 subtotal: parseFloat(document.getElementById("sub-total-amount").textContent.replace("₱ ", "")),
-                productId: button.dataset.productId 
+                productId: button.dataset.productId
               };
-          
-             cart.push(CustomizeformData);     
 
-             console.log(cart);
+              cart.push(CustomizeformData);
+              saveCartToLocalStorage(cart);
 
+              console.log(cart);
             });
           });
 
@@ -382,25 +406,24 @@ export function showDefaultForm(allProducts) {
   const defaultBtns = document.querySelectorAll(".default-addtocart-btn");
   const addToCartForm = document.querySelector(".add-to-cart-default__container");
 
-
   defaultBtns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
       event.preventDefault(); // Prevent the default anchor action
       // console.log("hi");
 
-       const productId =parseInt(btn.getAttribute("data-product-id"), 10); // 
-       console.log(productId);
+      const productId = parseInt(btn.getAttribute("data-product-id"), 10); // 
+      console.log(productId);
 
-       const product = allProducts?.find(p => p.id === productId);
-       console.log("Found product:", product);
-       if (!product) {
+      const product = allProducts?.find(p => p.id === productId);
+      console.log("Found product:", product);
+      if (!product) {
         console.error(`No product found with id: ${productId}`);
       }
       if (product) {
-      
+
         addToCartForm.style.display = "flex"; // Show the form
         document.body.style.overflow = "hidden";
-       
+
         addToCartForm.innerHTML = `
          <form class="add-to-cart__Dform" action="">
           <i class="close-add-to-cart-Dform ri-close-circle-fill"></i>
@@ -467,14 +490,8 @@ export function showDefaultForm(allProducts) {
             </div>
             </div>
           </div>
-  
-     
         </form>
-
       `;
-
-        //for dispalying reference image
-        
         //close the form
         const closeBtn = addToCartForm.querySelector(".close-add-to-cart-Dform");
         if (closeBtn) {
@@ -490,14 +507,12 @@ export function showDefaultForm(allProducts) {
           .forEach((button) => {
             button.addEventListener("click", () => {
 
-              event.preventDefault(); 
+              event.preventDefault();
 
-
-             
               const CustomizeformData = {
                 ProductType: product.type,
                 ProductOccasion: "Default",
-                productnName : product.productName,
+                productnName: product.productName,
                 productImageSrc: product.image,
                 referenceImage: "Default",
                 dedication: product.description,
@@ -510,18 +525,18 @@ export function showDefaultForm(allProducts) {
                 theme: "Default",
                 quantity: document.getElementById("quantity").value,
                 subtotal: parseFloat(document.getElementById("sub-total-amount").textContent.replace("₱ ", "")),
-                productId: button.dataset.productId 
+                productId: button.dataset.productId
               };
-          
-             cart.push(CustomizeformData);     
 
-             console.log(cart);
+              cart.push(CustomizeformData);
+              saveCartToLocalStorage(cart);
 
+              console.log(cart);
             });
           });
 
-          document.getElementById("quantity").addEventListener("change", updateSubtotal);
- 
+        document.getElementById("quantity").addEventListener("change", updateSubtotal);
+
         calculateAndUpdateSubtotalForDefaultForm();
       }
     });
