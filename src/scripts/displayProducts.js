@@ -1,12 +1,9 @@
 // import { allproducts } from "../Data/all-Products";
-// import { cart } from "../Data/cart";
-// API
-import LZString from 'lz-string';
-const apiUrl = 'https://localhost:7078/api/Product';
+import { cart, saveCartToLocalStorage } from "../Data/cart";
 
-let cart = [];
+// localStorage.clear('cart');
 
-//para automatic na macalculate yung subtotal
+// para automatic na macalculate yung subtotal
 function calculateAndUpdateSubtotal() {
   const basePrice = parseFloat(
     document.querySelector(".product__form-price").textContent.replace("₱ ", "")
@@ -58,6 +55,9 @@ export function updatePrice(elementId, priceClass) {
   calculateAndUpdateSubtotal();
 }
 
+const apiUrl = 'https://localhost:7078/api/Product';
+
+// fetch the data from the db using api
 export async function displayAllProducts() {
   let allProductHTML = "";
   let allProducts = [];
@@ -103,42 +103,10 @@ export async function displayAllProducts() {
   }
 
   document.querySelector(".products__list-grid").innerHTML = allProductHTML;
+
+  // pass the data to the forms -> customize and defuault
   showCustomizeForm(allProducts);
-  showDefaultForm(allProducts);// Pass the fetched products to the showaddtoCartForm function
-}
-
-/* CART */
-// initialize cart, get the cart from local storage
-// return empty array if no items in the cart
-async function initializeCart() {
-  const storedCart = await getCartFromLocalStorage();
-  if (storedCart) {
-    cart = storedCart;
-  }
-}
-
-initializeCart();
-
-// add cart to local storage, compress the data
-async function saveCartToLocalStorage(cart) {
-  try {
-    const compressedCart = await LZString.compress(JSON.stringify(cart));
-    localStorage.setItem('cart', compressedCart);
-  } catch (e) {
-    if (e.name === 'QuotaExceededError') {
-      console.error('LocalStorage quota exceeded.');
-    } else {
-      console.error('Error saving cart to localStorage', e);
-    }
-  }
-}
-
-async function getCartFromLocalStorage() {
-  const compressedCart = localStorage.getItem('cart');
-  if (compressedCart) {
-    return await JSON.parse(LZString.decompress(compressedCart));
-  }
-  return null;
+  showDefaultForm(allProducts);
 }
 
 /* Form Customization */
@@ -379,7 +347,7 @@ export function showCustomizeForm(allProducts) {
               cart.push(CustomizeformData);
               saveCartToLocalStorage(cart);
 
-             console.log(cart);
+              console.log(cart);
 
             });
           });
@@ -419,8 +387,8 @@ export function showCustomizeForm(allProducts) {
 
 export function refreshProductDisplay() {
   displayAllProducts(); // Refresh the product list
-
 }
+
 export function showDefaultForm(allProducts) {
   const defaultBtns = document.querySelectorAll(".default-addtocart-btn");
   const addToCartForm = document.querySelector(
@@ -515,9 +483,7 @@ export function showDefaultForm(allProducts) {
         </form>
       `;
         //close the form
-        const closeBtn = addToCartForm.querySelector(
-          ".close-add-to-cart-Dform"
-        );
+        const closeBtn = addToCartForm.querySelector(".close-add-to-cart-Dform");
         if (closeBtn) {
           closeBtn.addEventListener("click", () => {
             addToCartForm.style.display = "none";
@@ -560,7 +526,7 @@ export function showDefaultForm(allProducts) {
               cart.push(CustomizeformData);
               saveCartToLocalStorage(cart);
 
-             console.log(cart);
+              console.log(cart);
 
             });
           });

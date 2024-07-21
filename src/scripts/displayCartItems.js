@@ -1,3 +1,7 @@
+import { cart } from "../Data/cart";
+// let addedProductIds;
+// const cart = localStorage.getItem('cart');
+
 export function generateCartHTML(cart) {
   let cartProductHTML = `
       <tr>
@@ -7,19 +11,26 @@ export function generateCartHTML(cart) {
         <th>Action</th>
       </tr>`;
 
+  // avoid dupli
+  // addedProductIds = new Set();
+
   cart.forEach((cartProducts) => {
-    cartProductHTML += `
+    // if (!addedProductIds.has(cartProducts.productId)) {
+    //   addedProductIds.add(cartProducts.productId);
+      {
+
+      cartProductHTML += `
           <tr>
             <td>
               <div class="order__name-column">
                 <img
                   class="order__image"
-                  src="${cartProducts.productImageSrc}"
+                  src="data:image/jpeg;base64,${cartProducts.productImageSrc}"
                   alt=""
                 />
                 <div>
                   <p class="order__name">${cartProducts.productname}</p>
-                  <span class="order__price">P ${cartProducts.subtotal}</span>
+                  <span class="order__price">P ${cartProducts.price.toFixed(2)}</span>
                 </div>
               </div>
             </td>
@@ -27,7 +38,7 @@ export function generateCartHTML(cart) {
               <input
                 type="number"
                 class="order-quantity"
-                data-product-id="${cartProducts.productId}"  // Ensure this line is present
+                data-product-id="${cartProducts.productId}"
                 name="quantity"
                 min="1"
                 max="10"
@@ -36,21 +47,20 @@ export function generateCartHTML(cart) {
               />
             </td>
             <td>
-              <span class="order__total" data-product-id="${cartProducts.productId}">P ${cartProducts.subtotal}</span>
+              <span class="order__total" data-product-id="${cartProducts.productId}">P ${(cartProducts.quantity * cartProducts.price).toFixed(2)}</span>
             </td>
             <td>
               <i class="ri-file-info-fill details__productbtn" data-id="${cartProducts.productId}"></i>
               <i class="ri-delete-bin-2-fill delete__productbtn" data-id="${cartProducts.productId}"></i>
             </td>
           </tr>`;
+    }
   });
 
   document.querySelector(".order__table").innerHTML = cartProductHTML;
 
   updatesubtotalBaseonQuantity(cart);
-  updateCartSummary(cart);
-
-  // Call to update cart summary
+  updateOrderSummary(cart);
 }
 
 function updatesubtotalBaseonQuantity(cart) {
@@ -80,6 +90,7 @@ function updatesubtotalBaseonQuantity(cart) {
   });
 }
 
+// Paayos na lang computation ya
 function updateOrderSummary(cart) {
   let subtotal = 0;
   let deliveryFee = 0;
@@ -87,28 +98,22 @@ function updateOrderSummary(cart) {
 
   // Calculate subtotal
   cart.forEach((item) => {
-    subtotal += item.subtotal;
+      subtotal += item.subtotal;
   });
 
+  // Log the subtotal for debugging purposes
+  console.log(subtotal);
+
   // Get the delivery fee from the selected delivery option
-  deliveryFee = parseInt(
-    document.getElementById("delivery__options").value,
-    10
-  );
+  deliveryFee = parseInt(document.getElementById("delivery__options").value, 10);
 
   // Calculate the total
   total = subtotal + deliveryFee;
 
   // Update the Subtotal, Delivery Fee, and Total in the order summary
-  document.querySelector(
-    ".order__summary-subTotal"
-  ).textContent = `P ${subtotal.toFixed(2)}`;
-  document.querySelector(
-    ".order__summary-deliveryFee"
-  ).textContent = `P ${deliveryFee.toFixed(2)}`;
-  document.querySelector(
-    ".order__summary-total"
-  ).textContent = `P ${total.toFixed(2)}`;
+  document.querySelector(".order__summary-subTotal").textContent = `P ${subtotal.toFixed(2)}`;
+  document.querySelector(".order__summary-deliveryFee").textContent = `P ${deliveryFee.toFixed(2)}`;
+  document.querySelector(".order__summary-total").textContent = `P ${total.toFixed(2)}`;
 
   const summary = {
     subtotal: subtotal.toFixed(2),
@@ -121,7 +126,7 @@ function updateOrderSummary(cart) {
 
 // Add event listener to the delivery options select element
 document.getElementById("delivery__options").addEventListener("change", () => {
-  updateOrderSummary(cart);
+  updateOrderSummary(cart, addedProductIds);
 });
 
 // Call updateOrderSummary on page load
