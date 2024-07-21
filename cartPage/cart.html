@@ -8,98 +8,100 @@
       href="https://api.fontshare.com/v2/css?f[]=poppins@100,101,200,201,300,301,400,401,500,501,600,601,700,701,800,801,900&display=swap"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-
     <title>e-commerce</title>
   </head>
   <body>
-    <!--web size navigation var-->
+    <!--nav-->
     <header>
       <div class="header container">
         <img src="/images/main__logo.png" class="main__logo" alt="" />
-
         <nav>
           <ul class="header__menu">
-            <li><a class="header_link" href="index.html">Home</a></li>
+            <li><a class="header_link current__page" href="../index.html">Home</a></li>
             <li><a class="header_link" href="aboutUs.html">About us</a></li>
-            <li><a class="header_link" href="productPage/productpage.html">Products</a></li>
-            <li><a class="header_link" href="contactUs.html">Contacts</a></li>
+            <li>
+              <a class="header_link" href="/productPage/productpage.html"
+                >Products</a
+              >
+            </li>
+            <li><a class="header_link" href="#Contacts">Contacts</a></li>
           </ul>
         </nav>
-
         <div class="header__right">
           <a href="cartPage/cart.html" class="cart__icon">
-            <i class="ri-shopping-basket-fill"></i>
+            <i class="ri-shopping-basket-2-fill"></i>
           </a>
-
-          <div class="header__line"></div>
-
+          <div class="line"></div>
           <div class="login__button">
-            <a href="/logInpage.html" class="btn"> Log in </a>
+            <a href="/loginPage/logInpage.html" class="btn"> Log in </a>
           </div>
-
-          <a class="header__bars">
-            <i class="ri-menu-fill"></i>
-          </a>
+          <a class="header__bars"><i class="ri-menu-fill"></i></a>
         </div>
       </div>
     </header>
-
-    <!-- Mobile Navigation -->
-
+    <!--mobile nav-->
+    <div class="mobile_nav"></div>
+    <!--end mobile nav-->
     <main>
-      <section class = "faqs container">
-        <div>
-          <h1>Frequently Asked Questions (FAQs)</h1>
-        </div>
+      <section class="order-cart">
+        <h1>My Orders</h1>
 
-        <div class = "faqs-content">
-          <div class = "question">1. What is your mode of payment?</div>
-          <div class = "answer">Answer: You can pay using GCash and Cash.</div>
-        </div>
+        <div class="order__container container">
+          <table class="order__table">
+          
 
-        <div class = "faqs-content">
-          <div class = "question">2. What is your mode of delivery?</div>
-          <div class = "answer">Answer: We deliver through our own motorcycle for smaller orders. <br>We use car transportation for orders in bulk to deliver the order properly.</div>
-        </div>
+          
+          </table>
 
-        <div class = "faqs-content">
-          <div class = "question">3. What are your products offered?</div>
-          <div class ="answer">Answer: You can view our products <a href = "productPage/productpage.html"><b>here.</b></a></div>
+          <div class="order__summary-container">
+          <h3 class="cart__summary-title">Cart summary</h3>
+            <table class="table__order-summary">
+              <tr  class="order__summary-subTotal">
+                <td>Subtotal</td>
+                <td>P 500</td>
+              </tr>
+              <tr class="order__summary-deliveryFee">
+                <td >Delivery Option</td>
+                <td>  <select id="delivery__options" name="delivery-options">
+                  <option value="40">Standard Delivery (2-3 days)</option>
+                  <option value="0">Pick up</option>
+                  <option value="38">Cash on Delivery</option>
+                  <option value="20">Meet up</option>
+              </select></td>
+              </tr>
+              <tr class="order__summary-deliveryFee">
+                <td >Delivery Fee</td>
+                <td>P 500</td>
+              </tr>
+              <tr class="order__summary-total">
+                <td >Total</td>
+                <td>P 500</td>
+              </tr>
+            </table>
+            <div  class="order__summary-buttons"  >
+              <a href="" class="btn">Checkout</a>
+            </div>
+          </div>
         </div>
-
-        <div class = "faqs-content">
-          <div class = "question">4. Where are you located?</div>
-          <div class = "answer">Answer: We currently don’t have a physical store, however, we’re based near Alfamart in Bulac, Bulacan.</div>
-        </div>
-
-        <div class = "faqs-content">
-          <div class = "question">5. Can I customize my own pastry?</div>
-          <div class = "answer">Answer: Yes! We offer cake customizations based on the design/theme that you like.</div>
-        </div>
-
       </section>
     </main>
-
+    <!-- footer-->
     <footer class="footer">
       <div class="footer__conatiner container">
         <div class="footer__CTA">
@@ -120,15 +122,18 @@
 
           <ul class="other__links">
             <li class="links"><a href="FAQs.html">FAQ Ganern!</a></li>
-            <li class="links"><a href="termsAndConditions.html">Terms & Conditions</a></li>
-            <li class="links"><a href="shippingPolicy.html">Shipping Policy</a></li>
+            <li class="links">
+              <a href="termsAndConditions.html">Terms & Conditions</a>
+            </li>
+            <li class="links">
+              <a href="shippingPolicy.html">Shipping Policy</a>
+            </li>
             <li class="links"><a href="contactUs.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
     </footer>
 
-
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="cart-js.js"></script>
   </body>
 </html>

@@ -10,7 +10,7 @@ export default async function displayFeaturedProducts() {
       console.log("Error in getting featured products.");
       return;
     }
-
+    
     const data = await res.json();
     data.forEach((fProducts) => {
       featuredProductHTML += `

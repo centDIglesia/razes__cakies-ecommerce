@@ -11,9 +11,11 @@ import {
   showDefaultForm
 } from "../src/scripts/displayProducts";
 
+
 document.addEventListener("DOMContentLoaded", () => {
   displayAllProducts();
   showDefaultForm();
   showCustomizeForm();
+
  
 });
