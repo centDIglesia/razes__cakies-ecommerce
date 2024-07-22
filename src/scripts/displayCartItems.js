@@ -59,6 +59,8 @@ export function generateCartHTML(cart) {
   updatesubtotalBaseonQuantity(cart);
 }
 
+
+
 function updatesubtotalBaseonQuantity(cart) {
   document.querySelectorAll(".order-quantity").forEach((input) => {
     input.addEventListener("change", (event) => {
@@ -76,15 +78,19 @@ function updatesubtotalBaseonQuantity(cart) {
 
           localStorage.setItem("cart", JSON.stringify(cart));
 
-          // Update the order summary to reflect the new subtotal
+         
+          
           updateOrderSummary(cart);
         } else {
-          event.target.value = product.quantity; // Reset to previous valid quantity if out of bounds
+          event.target.value = product.quantity; 
+          
         }
       }
     });
   });
 }
+
+
 
 function updateOrderSummary(cart) {
   let subtotal = 0;
