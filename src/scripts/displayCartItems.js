@@ -1,3 +1,5 @@
+import { cart } from "../Data/cart";
+
 export function generateCartHTML(cart) {
   let cartProductHTML = `
       <tr>
@@ -7,19 +9,25 @@ export function generateCartHTML(cart) {
         <th>Action</th>
       </tr>`;
 
-  cart.forEach((cartProducts) => {
-    cartProductHTML += `
+  console.log(cart);
+  const uniqueProductIds = new Set();
+
+  cart.forEach((cartProduct) => {
+    if (!uniqueProductIds.has(cartProduct.productId)) {
+      uniqueProductIds.add(cartProduct.productId);
+
+      cartProductHTML += `
           <tr>
             <td>
               <div class="order__name-column">
                 <img
                   class="order__image"
-                  src="${cartProducts.productImageSrc}"
+                  src="data:image/jpeg;base64,${cartProduct.productImageSrc}"
                   alt=""
                 />
                 <div>
-                  <p class="order__name">${cartProducts.productname}</p>
-                  <span class="order__price">P ${cartProducts.subtotal}</span>
+                  <p class="order__name">${cartProduct.productname}</p>
+                  <span class="order__price">P ${cartProduct.subtotal}</span>
                 </div>
               </div>
             </td>
@@ -27,28 +35,28 @@ export function generateCartHTML(cart) {
               <input
                 type="number"
                 class="order-quantity"
-                data-product-id="${cartProducts.productId}"  // Ensure this line is present
+                data-product-id="${cartProduct.productId}"
                 name="quantity"
                 min="1"
                 max="10"
                 step="1"
-                value="${cartProducts.quantity}"
+                value="${cartProduct.quantity}"
               />
             </td>
             <td>
-              <span class="order__total" data-product-id="${cartProducts.productId}">P ${cartProducts.subtotal}</span>
+              <span class="order__total" data-product-id="${cartProduct.productId}">P ${cartProduct.subtotal}</span>
             </td>
             <td>
-              <i class="ri-file-info-fill details__productbtn" data-id="${cartProducts.productId}"></i>
-              <i class="ri-delete-bin-2-fill delete__productbtn" data-id="${cartProducts.productId}"></i>
+              <i class="ri-file-info-fill details__productbtn" data-id="${cartProduct.productId}"></i>
+              <i class="ri-delete-bin-2-fill delete__productbtn" data-id="${cartProduct.productId}"></i>
             </td>
           </tr>`;
+    }
   });
 
   document.querySelector(".order__table").innerHTML = cartProductHTML;
 
   updatesubtotalBaseonQuantity(cart);
- 
 }
 
 function updatesubtotalBaseonQuantity(cart) {

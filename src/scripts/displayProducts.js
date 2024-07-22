@@ -1,6 +1,8 @@
 // import { allproducts } from "../Data/all-Products";
-import { cart } from "../Data/cart";
+import { cart, saveCartToLocalStorage } from "../Data/cart";
 const apiUrl = 'https://localhost:7078/api/Product';
+
+// localStorage.clear('cart');
 
 //para automatic na macalculate yung subtotal
 function calculateAndUpdateSubtotal() {
@@ -57,7 +59,7 @@ export function updatePrice(elementId, priceClass) {
 
 export async function displayAllProducts() {
   let allProductHTML = "";
-  let allProducts = allproducts;
+  let allProducts = [];
   let filteredProducts = []; // Define filteredProducts here
 
   try {
@@ -90,7 +92,7 @@ export async function displayAllProducts() {
     if (activeCategory.toLowerCase() === 'all-occasions') {
       filteredProducts = allProducts;
     } else {
-      filteredProducts = allProducts.filter(product => 
+      filteredProducts = allProducts.filter(product =>
         product.occasion.toLowerCase() === activeCategory.toLowerCase() &&
         product.type.toLowerCase() === activeProductType.toLowerCase()
       );
@@ -101,7 +103,7 @@ export async function displayAllProducts() {
     filteredProducts.forEach((product) => {
       allProductHTML += `
       <div class="product__card">
-        <img src="${product.image}" alt="${product.id}" />
+        <img src="data:image/jpeg;base64,${product.image}" alt="${product.id}" />
         <div class="product-card__description">
           <h3 class="product__name">${product.productName}</h3>
           <span class="product__price">$ ${product.price}</span>
@@ -148,7 +150,7 @@ export function showCustomizeForm(allProducts) {
           <div class="add-to-cart-left__form">
             <div class="product__display-image">
               <img
-                src="${product.image}"
+                src="data:image/jpeg;base64,${product.image}"
                 class="add-to-cart__formImg"
                 alt=""
               />
@@ -364,14 +366,15 @@ export function showCustomizeForm(allProducts) {
               cart.push(CustomizeformData);
 
               // Save the updated cart to local storage
-              localStorage.setItem("cart", JSON.stringify(cart));
+              // localStorage.setItem("cart", JSON.stringify(cart));
+              saveCartToLocalStorage(cart);
 
               console.log("Updated cart:", cart);
               refreshProductDisplay();
 
               addToCartForm.style.display = "none";
               document.body.style.overflow = "auto";
-            
+
             });
           });
 
@@ -441,7 +444,7 @@ export function showDefaultForm(allProducts) {
           <div class="add-to-cart-left__Dform">
             <div class="product__display-image">
               <img
-                src="${product.image}"
+                src="data:image/jpeg;base64,${product.image}"
                 class="add-to-cart__DformImg"
                 alt=""
               />
@@ -550,18 +553,19 @@ export function showDefaultForm(allProducts) {
                 price: product.price,  // Ensure this line is present
                 productId: button.dataset.productId,
               };
-              
-                      // Check if the cart is already in local storage
-                      cart.push(CustomizeformData);
 
-                      // Save the updated cart to local storage
-                      localStorage.setItem("cart", JSON.stringify(cart));
-        
-                      console.log("Updated cart:", cart);
-                      refreshProductDisplay();
+              // Check if the cart is already in local storage
+              cart.push(CustomizeformData);
 
-                      addToCartForm.style.display = "none";
-                      document.body.style.overflow = "auto";
+              // Save the updated cart to local storage
+              // localStorage.setItem("cart", JSON.stringify(cart));
+              saveCartToLocalStorage(cart);
+
+              console.log("Updated cart:", cart);
+              refreshProductDisplay();
+
+              addToCartForm.style.display = "none";
+              document.body.style.overflow = "auto";
 
             });
           });

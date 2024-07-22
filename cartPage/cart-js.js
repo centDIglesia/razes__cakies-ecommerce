@@ -5,8 +5,8 @@ import "../styles/components/footer.css";
 import "../styles/components/cart.css";
 import "../styles/components/mobile-nav.css";
 import "../styles/utils.css";
-
-import { cart } from "../src/Data/cart";
+import { cart, getCartFromLocalStorage } from "../src/Data/cart";
+// import { generateCartHTML, loadOrderSummary } from "../src/scripts/displayCartItems";
 import {
   generateCartHTML,
   loadOrderSummary,
@@ -14,19 +14,19 @@ import {
 
 import showMobileNav from "../src/scripts/displayNavBar";
 
+
 // Retrieve the customized form data from localStorage
 document.addEventListener("DOMContentLoaded", () => {
   loadOrderSummary();
   showMobileNav();
-  const storedCart = localStorage.getItem("cart");
+  const storedCart = getCartFromLocalStorage();
 
   if (storedCart) {
-    const cartData = JSON.parse(storedCart);
-    if (Array.isArray(cartData)) {
-      cart.push(...cartData);
+    if (Array.isArray(storedCart)) {
+      cart.push(...storedCart);
+      generateCartHTML(cart);
     } else {
-      cart.push(cartData);
+      console.error("Retrieved cart data is not an array:", storedCart);
     }
-    generateCartHTML(cart);
   }
 });
