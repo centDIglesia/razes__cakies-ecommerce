@@ -1,6 +1,6 @@
-import { allproducts } from "../Data/all-Products";
+// import { allproducts } from "../Data/all-Products";
 import { cart } from "../Data/cart";
-//const apiUrl = 'https://localhost:7078/api/Product';
+const apiUrl = 'https://localhost:7078/api/Product';
 
 //para automatic na macalculate yung subtotal
 function calculateAndUpdateSubtotal() {
@@ -57,17 +57,17 @@ export function updatePrice(elementId, priceClass) {
 
 export async function displayAllProducts() {
   let allProductHTML = "";
-  let allProducts = allproducts;
+  let allProducts = [];
   try {
-    // const res = await fetch(apiUrl);
+    const res = await fetch(apiUrl);
 
-    // if (!res.ok) {
-    //   console.log("Error in getting products.");
-    //   return;
-    // }
+    if (!res.ok) {
+      console.log("Error in getting products.");
+      return;
+    }
 
-    // const data = await res.json();
-    // allProducts = data;
+    const data = await res.json();
+    allProducts = data;
 
     // Assuming 'allproducts' is an array of product objects
     allProducts.forEach((product) => {
