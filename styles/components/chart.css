@@ -95,3 +95,60 @@ Full size view
 ::-webkit-scrollbar-thumb:hover {
   background: var(--clr-maincolor);
 }
+
+
+
+
+/*desktop first*/
+/* 2xl */
+@media (max-width: 1535px) {
+
+}
+
+/* xl */
+/*@media (max-width: 1279px) {}
+
+/* lg */
+@media (max-width: 1023px) {
+
+}
+
+/* md */
+@media (max-width: 767px) {
+  .pricing__chart-image{
+    flex-direction: column;
+  }
+  .pricing__size-title {
+   
+    font-size: var(--size-3xl);
+    font-weight: 800;
+    margin-bottom: var(--size-3xl);
+  }
+.view__sizechart{
+  font-size: var(--size-xs);
+}
+
+.pricing__size{
+  flex-direction: column;
+}
+
+.pricing__chart-image{
+  width: 15em;
+}
+
+.pricing__size-chart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+}
+
+/* sm */
+/*@media (max-width: 639px) {}
+
+/* xs */
+/*@media (max-width: 474px) {
+
+}*/
+
