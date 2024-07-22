@@ -57,7 +57,9 @@ export function updatePrice(elementId, priceClass) {
 
 export async function displayAllProducts() {
   let allProductHTML = "";
-  let allProducts = [];
+  let allProducts = allproducts;
+  let filteredProducts = []; // Define filteredProducts here
+
   try {
     const res = await fetch(apiUrl);
 
@@ -70,7 +72,33 @@ export async function displayAllProducts() {
     allProducts = data;
 
     // Assuming 'allproducts' is an array of product objects
-    allProducts.forEach((product) => {
+
+    const activeCategoryElement = document.querySelector('.category__btn-active');
+    const activeProductTypeElement = document.querySelector('.product-range__card-cake-active');
+
+    if (!activeCategoryElement || !activeProductTypeElement) {
+      console.log("Active category or product type not found.");
+      return;
+    }
+
+    const activeCategory = activeCategoryElement.getAttribute('data-category');
+    const activeProductType = activeProductTypeElement.getAttribute('data-product');
+
+    console.log(" Category:", activeCategory);
+    console.log(" Product :", activeProductType);
+
+    if (activeCategory.toLowerCase() === 'all-occasions') {
+      filteredProducts = allProducts;
+    } else {
+      filteredProducts = allProducts.filter(product => 
+        product.occasion.toLowerCase() === activeCategory.toLowerCase() &&
+        product.type.toLowerCase() === activeProductType.toLowerCase()
+      );
+    }
+
+    console.log("Filt Products:", filteredProducts);
+
+    filteredProducts.forEach((product) => {
       allProductHTML += `
       <div class="product__card">
         <img src="${product.image}" alt="${product.id}" />
@@ -81,11 +109,7 @@ export async function displayAllProducts() {
         </div>
         <div class="product-card_actions">
           <a href="#" class="product__customize-btn btn" data-product-id="${product.id}">Customize it</a>
-
-        
-           <a href="#" class="default-addtocart-btn" data-product-id="${product.id}"><i class="ri-shopping-basket-2-fill"></i></a>
-  
-
+          <a href="#" class="default-addtocart-btn" data-product-id="${product.id}"><i class="ri-shopping-basket-2-fill"></i></a>
         </div>
         <span class="product__ratings">
           <i class="ri-star-fill"></i> 
@@ -99,8 +123,8 @@ export async function displayAllProducts() {
   }
 
   document.querySelector(".products__list-grid").innerHTML = allProductHTML;
-  showCustomizeForm(allProducts);
-  showDefaultForm(allProducts); // Pass the fetched products to the showaddtoCartForm function
+  showCustomizeForm(filteredProducts);
+  showDefaultForm(filteredProducts); // Pass the fetched products to the showaddtoCartForm function
 }
 
 export function showCustomizeForm(allProducts) {
