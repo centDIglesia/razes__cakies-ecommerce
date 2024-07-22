@@ -26,11 +26,11 @@ function showAddedToCartMessagee() {
   const successMessage = document.querySelector('.added-successfullyy');
   
   if (successMessage) {
-    successMessage.classList.add('added-successfully-show');
+    successMessage.classList.add('added-succesfullyy');
     
     setTimeout(() => {
       successMessage.classList.remove('added-successfully-show');
-    }, 10000);
+    }, 1000);
   }
 }
 

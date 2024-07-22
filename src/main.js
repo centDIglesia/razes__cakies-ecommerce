@@ -20,10 +20,12 @@ import { setupSlider } from "./scripts/slider";
 import displayFeaturedProducts from "./scripts/displayFeatured";
 import displayPopularProducts from "./scripts/displayPopularProducts";
 import showMobileNav from "./scripts/displayNavBar";
+// import sendEmail from "../src/scripts/contactUs";
 
 setupSlider();
 
 document.addEventListener("DOMContentLoaded", () => {
+  // sendEmail();
   displayFeaturedProducts();
   displayPopularProducts();
   showMobileNav();

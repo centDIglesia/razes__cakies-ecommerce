@@ -194,7 +194,7 @@ left: 50%;
     transition: top 0.3s ease, opacity 0.3s ease;
 }
 
-.added-succesfully-show{
+.added-successfully-show{
   opacity: 1;
   pointer-events: initial; 
   top: 50%;
