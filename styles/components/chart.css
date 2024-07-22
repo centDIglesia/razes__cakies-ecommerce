@@ -110,7 +110,9 @@ Full size view
 
 /* lg */
 @media (max-width: 1023px) {
-
+  .pricing__chart-image img{
+width: 20em;
+  }
 }
 
 /* md */
@@ -127,14 +129,12 @@ Full size view
 .view__sizechart{
   font-size: var(--size-xs);
 }
-
 .pricing__size{
   flex-direction: column;
 }
-
-.pricing__chart-image{
-  width: 15em;
-}
+.pricing__chart-image img{
+  width: 20em;
+    }
 
 .pricing__size-chart{
   display: flex;
@@ -145,10 +145,12 @@ Full size view
 }
 
 /* sm */
-/*@media (max-width: 639px) {}
+@media (max-width: 639px) {
+  
+}
 
 /* xs */
-/*@media (max-width: 474px) {
+@media (max-width: 474px) {
 
-}*/
+}
 

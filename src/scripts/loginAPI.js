@@ -7,7 +7,7 @@ export async function login() {
     try {
         const user = {
             // Add placeholder here coz email at pass lang need
-            firstName: "string", 
+            firstName: "string",
             lastName: "string",
             email: email,
             password: password
@@ -28,6 +28,9 @@ export async function login() {
 
         const data = await response.json();
         localStorage.setItem('token', data.token);
+        console.log(data.token);
+
+        updateButtonVisibility();
         alert("Logged in successful");
     } catch (error) {
         console.error('Error:', error);
@@ -38,3 +41,25 @@ export async function login() {
         document.getElementById('loginPassword').value = '';
     }
 }
+
+// export function updateButtonVisibility() {
+//     console.log('Updating button visibility');
+//     const loginBtns = document.getElementsByClassName('log__in');
+//     const logoutBtns = document.getElementsByClassName('log__out');
+
+//     if (localStorage.getItem('token') !== null) {
+//         for (let i = 0; i < loginBtns.length; i++) {
+//             loginBtns[i].style.display = 'none';
+//         }
+//         for (let i = 0; i < logoutBtns.length; i++) {
+//             logoutBtns[i].style.display = 'block';
+//         }
+//     } else {
+//         for (let i = 0; i < loginBtns.length; i++) {
+//             loginBtns[i].style.display = 'block';
+//         }
+//         for (let i = 0; i < logoutBtns.length; i++) {
+//             logoutBtns[i].style.display = 'none';
+//         }
+//     }
+// }

@@ -3,6 +3,8 @@ import { cart, saveCartToLocalStorage } from "../Data/cart";
 const apiUrl = 'https://localhost:7078/api/Product';
 
 // localStorage.clear('cart');
+// localStorage.clear(cart);
+
 
 //para automatic na macalculate yung subtotal
 function calculateAndUpdateSubtotal() {
@@ -375,7 +377,7 @@ export function showCustomizeForm(allProducts) {
 
               addToCartForm.style.display = "none";
               document.body.style.overflow = "auto";
-
+              showAddedToCartMessage();
             });
           });
 
@@ -579,4 +581,17 @@ export function showDefaultForm(allProducts) {
       }
     });
   });
+}
+
+
+function showAddedToCartMessage() {
+  const successMessage = document.querySelector('.added-succesfully');
+  
+  if (successMessage) {
+    successMessage.classList.add('added-succesfully-show');
+    
+    setTimeout(() => {
+      successMessage.classList.remove('added-succesfully-show');
+    }, 3000);
+  }
 }

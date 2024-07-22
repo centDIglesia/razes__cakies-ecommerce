@@ -127,7 +127,10 @@ right: 5em;
 /* md */
 @media (max-width: 767px) {
  
-
+.customer__feedback-card{
+    flex-direction: column;
+    text-align: center;
+}
 }
 
 /* sm */

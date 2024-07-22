@@ -16,3 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
   getRegions();
   showMobileNav();
 });
+
+
+document.querySelector('.proceed__payment-btn').addEventListener('click', function() {
+  showAddedToCartMessagee();
+});
+
+function showAddedToCartMessagee() {
+  const successMessage = document.querySelector('.added-successfullyy');
+  
+  if (successMessage) {
+    successMessage.classList.add('added-successfully-show');
+    
+    setTimeout(() => {
+      successMessage.classList.remove('added-successfully-show');
+    }, 10000);
+  }
+}
+
+

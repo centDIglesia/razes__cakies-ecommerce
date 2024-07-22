@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   displayFeaturedProducts();
   displayPopularProducts();
   showMobileNav();
+  updateButtonVisibility();
   //for viewing ful size chart
   const viewFullChartbutton = document.querySelector(".view__sizechart");
   const fullSizeChart = document.querySelector(".full__size-chart");

@@ -83,3 +83,16 @@ export async function getBarangays() {
     console.error("Error fetching barangays:", error);
   }
 }
+
+
+function showAddedToCartMessage() {
+  const successMessage = document.querySelector('.added-succesfully');
+  
+  if (successMessage) {
+    successMessage.classList.add('added-succesfully-show');
+    
+    setTimeout(() => {
+      successMessage.classList.remove('added-succesfully-show');
+    }, 3000);
+  }
+}

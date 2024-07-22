@@ -10,11 +10,12 @@ export function generateCartHTML(cart) {
       </tr>`;
 
   console.log(cart);
-  const uniqueProductIds = new Set();
+  // const uniqueProductIds = new Set();
 
   cart.forEach((cartProduct) => {
-    if (!uniqueProductIds.has(cartProduct.productId)) {
-      uniqueProductIds.add(cartProduct.productId);
+    // if (!uniqueProductIds.has(cartProduct.productId)) {
+    //   uniqueProductIds.add(cartProduct.productId);
+      {
 
       cartProductHTML += `
           <tr>

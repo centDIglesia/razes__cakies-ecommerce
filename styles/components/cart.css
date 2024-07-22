@@ -199,3 +199,55 @@ th:last-child {
   z-index: 9999;
   margin-bottom: 1em;
 }
+
+/*desktop first*/
+/* 2xl */
+@media (max-width: 1535px) {
+
+}
+
+/* xl */
+/*@media (max-width: 1279px) {}
+
+/* lg */
+@media (max-width: 1023px) {
+  .order__name{
+    font-size: var(--size-base);
+  } 
+
+  .order__price{
+    font-size: var(--size-base);
+  }
+}
+
+/* md */
+@media (max-width: 767px) {
+  .order__name{
+    font-size: var(--size-sm);
+  }
+
+  .order__price{
+    font-size: var(--size-sm);
+  }
+
+  .order__table i{
+    font-size: var(--size-base);
+  }
+}
+
+/* sm */
+@media (max-width: 639px) {
+  .order__name{
+    font-size: var(--size-xs);
+  }
+
+  .order__price{
+    font-size: var(--size-xs);
+  }
+}
+
+/* xs */
+@media (max-width: 474px) {
+
+}
+
