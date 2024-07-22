@@ -127,7 +127,7 @@ export async function displayAllProducts() {
 
   document.querySelector(".products__list-grid").innerHTML = allProductHTML;
   showCustomizeForm(filteredProducts);
-  showDefaultForm(filteredProducts); // Pass the fetched products to the showaddtoCartForm function
+  showDefaultForm(filteredProducts); 
 }
 
 export function showCustomizeForm(allProducts) {
