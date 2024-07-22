@@ -1,4 +1,4 @@
-import { cart } from "../Data/cart";
+import { cart} from "../Data/cart";
 
 export function generateCartHTML(cart) {
   let cartProductHTML = `
@@ -55,11 +55,18 @@ export function generateCartHTML(cart) {
   });
 
   document.querySelector(".order__table").innerHTML = cartProductHTML;
+    // const deleteButtons = document.querySelectorAll('.delete__productbtn');
+
+    // deleteButtons.forEach(button => {
+    //   button.addEventListener('click', function () {
+    //     const productId = this.getAttribute('data-productid');
+    //     console.log(productId);
+    //     deleteFromCart(productId);
+    //   });
+    // });
 
   updatesubtotalBaseonQuantity(cart);
 }
-
-
 
 function updatesubtotalBaseonQuantity(cart) {
   document.querySelectorAll(".order-quantity").forEach((input) => {
@@ -78,12 +85,12 @@ function updatesubtotalBaseonQuantity(cart) {
 
           localStorage.setItem("cart", JSON.stringify(cart));
 
-         
-          
+
+
           updateOrderSummary(cart);
         } else {
-          event.target.value = product.quantity; 
-          
+          event.target.value = product.quantity;
+
         }
       }
     });

@@ -25,7 +25,7 @@ export default async function displayFeaturedProducts() {
               <div class="featured__Info-description">
               <h2>${fProducts.title}</h2>
               <p>${fProducts.description}</p>
-            </div>
+            </div>  
 
             <div class="featured__Info-button">
               <a href="#" class="btn">Add to cart</a>

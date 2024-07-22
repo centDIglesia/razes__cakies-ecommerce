@@ -1,6 +1,7 @@
 import LZString from 'lz-string';
 
-let cart = [];
+
+export let cart = [];
 
 // Function to get the cart from local storage
 export function getCartFromLocalStorage() {
@@ -37,14 +38,25 @@ export function saveCartToLocalStorage(cart) {
   }
 }
 
-// Function to remove an item from the cart by ID
-export function removeFromCartById(itemId) {
-  const index = cart.findIndex(item => item.id === itemId);
-  if (index !== -1) {
-    cart.splice(index, 1);
-    saveCartToLocalStorage(cart);
-  }
-}
+// export function deleteFromCart(productId) {
+//   let compressedCart = localStorage.getItem('cart');
+//   const decompressedCart = LZString.decompress(compressedCart);
+//   const cart = JSON.parse(decompressedCart);
 
-// Export the cart
-export { cart };
+//   if (cart) {
+//       const index = cart.findIndex(item => item.productId === productId);
+      
+//       if (index !== -1) {
+//           cart.splice(index, 1);
+
+//           const recompressedCart = LZString.compress(JSON.stringify(cart));
+//           localStorage.setItem('cart', recompressedCart);
+
+//           console.log(`Item with productId ${productId} removed from the cart.`);
+//       } else {
+//           console.log(`Item with productId ${productId} not found in the cart.`);
+//       }
+//   } else {
+//       console.log('Cart is empty or does not exist.');
+//   }
+// }

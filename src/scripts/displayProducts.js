@@ -107,7 +107,7 @@ export async function displayAllProducts() {
         <img src="data:image/jpeg;base64,${product.image}" alt="${product.id}" />
         <div class="product-card__description">
           <h3 class="product__name">${product.productName}</h3>
-          <span class="product__price">$ ${product.price}</span>
+          <span class="product__price">₱ ${product.price}</span>
           <p>${product.description}</p>
         </div>
         <div class="product-card_actions">
