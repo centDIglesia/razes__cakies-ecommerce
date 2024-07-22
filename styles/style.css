@@ -94,3 +94,9 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--clr-maincolor);
   outline: 1px solid var(--clr-maincolor);
 }
+
+
+.location__link{
+  font-weight: 600;
+  text-decoration: underline;
+}
