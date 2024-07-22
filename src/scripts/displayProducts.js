@@ -88,7 +88,8 @@ export async function displayAllProducts() {
     console.log(" Product :", activeProductType);
 
     if (activeCategory.toLowerCase() === 'all-occasions') {
-      filteredProducts = allProducts;
+      filteredProducts = allProducts.filter(product =>  product.type.toLowerCase() === activeProductType.toLowerCase() );
+      
     } else {
       filteredProducts = allProducts.filter(product => 
         product.occasion.toLowerCase() === activeCategory.toLowerCase() &&

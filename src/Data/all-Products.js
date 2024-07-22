@@ -759,5 +759,54 @@ export const allproducts = [
     ratings: "4.9",
     image: "/images/All-Products/cupcake25.png",
   },
-  
+  {
+    id: 77,
+    productName: "Mini donuts",
+    type: "doughnut",
+    occasion: "Birthday",
+    description: "Wonderful donut for a memorable birthday.",
+    price: 5.49,
+    ratings: "4.9",
+    image: "/images/All-Products/donuts.png",
+  },
+  {
+    id: 78,
+    productName: "Mini donuts",
+    type: "doughnut",
+    occasion: "Birthday",
+    description: "Wonderful donut for a memorable birthday.",
+    price: 5.49,
+    ratings: "4.9",
+    image: "/images/All-Products/donuts1.png",
+  },
+  {
+    id: 79,
+    productName: "Cookies v2",
+    type: "Cookies",
+    occasion: "Birthday",
+    description: "Delicious cookies perfect for celebrating a memorable birthday.",
+    price: 5.49,
+    ratings: "4.9",
+    image: "/images/All-Products/cookies01.png"
+  },
+  {
+    id: 80,
+    productName: "Cookies v2",
+    "type": "Cookies",
+    "occasion": "Birthday",
+    "description": "Delicious cookies perfect for celebrating a memorable birthday.",
+    "price": 5.49,
+    "ratings": "4.9",
+    "image": "/images/All-Products/cookies02.png"
+  },
+  {
+    "id": 81,
+    "productName": "Cookies v3",
+    "type": "Cookies",
+    "occasion": "Birthday",
+    "description": "Delicious cookies perfect for celebrating a memorable birthday.",
+    "price": 5.49,
+    "ratings": "4.9",
+    "image": "/images/All-Products/cookies03.png"
+  },
 ]
