@@ -36,33 +36,64 @@
     <header>
       <div class="header container">
         <img src="/images/main__logo.png" class="main__logo" alt="" />
-
         <nav>
           <ul class="header__menu">
-            <li><a class="header_link" href="index.html">Home</a></li>
+            <li><a class="header_link current__page" href="#Home">Home</a></li>
             <li><a class="header_link" href="aboutUs.html">About us</a></li>
-            <li><a class="header_link" href="productPage/productpage.html">Products</a></li>
+            <li>
+              <a class="header_link" href="/productPage/productpage.html"
+                >Products</a
+              >
+            </li>
             <li><a class="header_link" href="contactUs.html">Contacts</a></li>
           </ul>
         </nav>
-
         <div class="header__right">
           <a href="cartPage/cart.html" class="cart__icon">
-            <i class="ri-shopping-basket-fill"></i>
+            <i class="cart__icon ri-shopping-basket-2-fill"></i>
           </a>
-
-          <div class="header__line"></div>
-
+          <div class="line"></div>
           <div class="login__button">
-            <a href="loginPage/logInpage.html" class="btn"> Log in </a>
+            <a href="/loginPage/logInpage.html" class="log__in btn"> Log in </a>
+            <a href="/loginPage/logInpage.html" class="log__out btn"> Log out </a>
           </div>
-
-          <a class="header__bars">
-            <i class="ri-menu-fill"></i>
-          </a>
+          <a class="header__bars"><i class="ri-menu-fill"></i></a>
         </div>
       </div>
     </header>
+    <!--mobile nav-->
+    <div class="mobile__nav">
+      <nav>
+        <ul class="mobile-nav__menu">
+          <li><a class="mobile-nav__link" href="index.html">Home</a></li>
+          <li>
+            <a class="mobile-nav__link" href="aboutUs.html"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="productPage/product-page.js">Products</a>
+          </li>
+
+          <li>
+            <a class="mobile-nav__link" href="contactUs.html">Contacts</a>
+          </li>
+          <li class="mobile-nav__line"></li>
+       
+          <li>
+            <a href="cartPage/cart.html" class="cart__icon">
+              <i class="cart__icon ri-shopping-basket-2-fill"></i>
+            </a>
+          </li>
+          <li>
+            
+              <a href="/loginPage/logInpage.html" class="log__in btn"> Log in </a>
+              <a href="/loginPage/logInpage.html" class="log__out btn"> Log out </a>
+         
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <!-- Mobile Navigation -->
 

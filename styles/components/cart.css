@@ -7,6 +7,8 @@
 
 .order__container {
   margin: 3em 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .order-cart h1 {
@@ -100,21 +102,22 @@ th {
   flex-direction: column;
   border: 2px solid var(--clr-maincolor);
   border-radius: 0.4em;
-  max-width: 30em;
+  width: 30em;
   margin-top: 2em;
   padding: 1em;
-  justify-content: flex-end;
+  align-self: flex-end;
 }
 
 .table__order-summary {
   width: 100%;
   border-collapse: collapse;
   margin-top: 0.5em;
-  max-width: 30em;
+  align-self: flex-end;
 }
 
 .table__order-summary td {
   padding: 0.7em;
+  color: var(--clr-lightmaincolor);
 }
 
 td:last-child {
@@ -153,9 +156,10 @@ th:last-child {
   font-size: var(--size-sm);
 }
 
-.order__summary-total {
+.order__summary-total,
+.order__summary-totalv {
   border-top: 1px solid var(--clr-lightermaincolor);
-  color: var(--clr-maincolor);
+  color: var(--clr-maincolor) !important;
   font-weight: 700;
 }
 
@@ -168,13 +172,30 @@ th:last-child {
 .order__summary-buttons {
   align-items: right;
   display: flex;
-  justify-content: flex-end;
 }
 
-.order__summary-deliveryFee select {
+#delivery__options {
   padding: 0.3em;
   border-radius: 0.3em;
   color: var(--clr-maincolor);
   outline: none;
-  border:1px solid var(--clr-lightermaincolor);
+  border: 1px solid var(--clr-lightermaincolor);
+}
+
+.cart__link {
+  margin-bottom: 1em;
+  color: var(--clr-lightmaincolor);
+  font-size: var(--size-xs);
+  font-weight: 500;
+}
+
+.cart__nav-link:hover {
+  color: var(--clr-maincolor);
+}
+
+.trackorder__btn {
+  align-self: flex-start;
+  font-size: var(--size-sm);
+  z-index: 9999;
+  margin-bottom: 1em;
 }

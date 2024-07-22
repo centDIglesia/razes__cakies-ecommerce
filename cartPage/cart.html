@@ -30,73 +30,112 @@
     <!--nav-->
     <header>
       <div class="header container">
-        <img src="/images/main__logo.png" class="main__logo" alt="" />
+        <a href="../index.html"><img src="/images/main__logo.png" class="main__logo" alt="" /></a>
         <nav>
           <ul class="header__menu">
-            <li><a class="header_link current__page" href="../index.html">Home</a></li>
-            <li><a class="header_link" href="aboutUs.html">About us</a></li>
+            <li><a class="header_link current__page" href="#Home">Home</a></li>
+            <li><a class="header_link" href="../aboutUs.html">About us</a></li>
             <li>
-              <a class="header_link" href="/productPage/productpage.html"
+              <a class="header_link" href="../productPage/productpage.html"
                 >Products</a
               >
             </li>
-            <li><a class="header_link" href="#Contacts">Contacts</a></li>
+            <li><a class="header_link" href="../contactUs.html">Contacts</a></li>
           </ul>
         </nav>
         <div class="header__right">
-          <a href="cartPage/cart.html" class="cart__icon">
-            <i class="ri-shopping-basket-2-fill"></i>
+          <a href="../cartPage/cart.html" class="cart__icon">
+            <i class="cart__icon ri-shopping-basket-2-fill"></i>
           </a>
           <div class="line"></div>
           <div class="login__button">
-            <a href="/loginPage/logInpage.html" class="btn"> Log in </a>
+            <a href="../loginPage/logInpage.html" class="log__in btn"> Log in </a>
+            <a href="../loginPage/logInpage.html" class="log__out btn"> Log out </a>
           </div>
           <a class="header__bars"><i class="ri-menu-fill"></i></a>
         </div>
       </div>
     </header>
     <!--mobile nav-->
-    <div class="mobile_nav"></div>
+    <div class="mobile__nav">
+      <nav>
+        <ul class="mobile-nav__menu">
+          <li><a class="mobile-nav__link" href="../index.html">Home</a></li>
+          <li>
+            <a class="mobile-nav__link" href="../aboutUs.html"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a class="mobile-nav__link" href="../productPage/productpage.html">Products</a>
+          </li>
+
+          <li>
+            <a class="mobile-nav__link" href="../contactUs.html">Contacts</a>
+          </li>
+          <li class="mobile-nav__line"></li>
+       
+          <li>
+            <a href="../cartPage/cart.html" class="cart__icon">
+              <i class="cart__icon ri-shopping-basket-2-fill"></i>
+            </a>
+          </li>
+          <li>
+            
+              <a href="../loginPage/logInpage.html" class="log__in btn"> Log in </a>
+              <a href="../loginPage/logInpage.html" class="log__out btn"> Log out </a>
+         
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!--mobile nav-->
+  
     <!--end mobile nav-->
     <main>
       <section class="order-cart">
+        <div class="cart__link"><a href="" class="cart">Cart</a></div>
         <h1>My Orders</h1>
 
         <div class="order__container container">
-          <table class="order__table">
-          
-
-          
-          </table>
+          <a
+            class="btn trackorder__btn"
+            href="../trackOrderPage/trackOrder.html"
+            >track order</a
+          >
+          <table class="order__table"></table>
 
           <div class="order__summary-container">
-          <h3 class="cart__summary-title">Cart summary</h3>
+            <h3 class="cart__summary-title">Cart summary</h3>
             <table class="table__order-summary">
-              <tr >
-                <td >Subtotal</td>
-                <td  class="order__summary-subTotal">P 500</td>
-
+              <tr>
+                <td>Subtotal</td>
+                <td class="order__summary-subTotal">P 500</td>
               </tr>
               <tr class="order__summary-modeofpayemnet">
-                <td >Delivery Option</td>
-                <td>  <select id="delivery__options" name="delivery-options">
-                  <option value="40">Standard Delivery (2-3 days)</option>
-                  <option value="0">Pick up</option>
-                  <option value="38">Cash on Delivery</option>
-                  <option value="20">Meet up</option>
-              </select></td>
+                <td>Delivery Option</td>
+                <td>
+                  <select id="delivery__options" name="delivery-options">
+                    <option value="40">Standard Delivery</option>
+                    <option value="0">Pick up</option>
+                    <option value="38">Cash on Delivery</option>
+                    <option value="20">Meet up</option>
+                  </select>
+                </td>
               </tr>
               <tr>
-                <td >Delivery Fee</td>
-                <td class="order__summary-deliveryFee" >P 500</td>
+                <td>Delivery Fee</td>
+                <td class="order__summary-deliveryFee">P 500</td>
               </tr>
-              <tr >
-                <td >Total</td>
+              <tr>
+                <td class="order__summary-totalv">Total</td>
                 <td class="order__summary-total">P 500</td>
               </tr>
             </table>
-            <div  class="order__summary-buttons"  >
-              <a href="" class="btn">Checkout</a>
+            <div class="order__summary-buttons">
+              <a href="../orderPayment/order.html" class="btn"
+                >Proceed to Payment</a
+              >
             </div>
           </div>
         </div>

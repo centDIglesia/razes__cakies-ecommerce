@@ -2,6 +2,7 @@ import "../styles/modern-noramalize.css";
 import "../styles/modern-noramalize.css";
 import "../styles/style.css";
 import "../styles/components/header.css";
+import "../styles/components/mobile-nav.css"
 import "../styles/components/login.css";
 import "../styles/components/footer.css";
 
@@ -12,10 +13,12 @@ import {
 } from "../src/scripts/loginform-toggle";
 import { login } from "../src/scripts/loginAPI";
 import { signup } from "../src/scripts/signupAPI";
+import showMobileNav from "../src/scripts/displayNavBar";
 
 document.addEventListener("DOMContentLoaded", () => {
   toggleForms();
   togglePasswordVisibility();
+  showMobileNav();
 
   // Sign up button
   const signupForm = document.getElementById("signup-form");

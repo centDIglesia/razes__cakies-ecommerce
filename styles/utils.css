@@ -94,6 +94,10 @@
   margin-top: 5rem;
 }
 
+.cart__icon{
+  color: var(--clr-maincolor);
+  font-size: var(--size-2xl);
+}
 
 /* xs */
 @media (min-width: 475px) {
